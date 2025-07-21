@@ -1,0 +1,28 @@
+{
+  "botId": "1",
+  "strategy": "momentum",
+  "startDate": 1748469291559,
+  "initialValue": 0,
+  "portfolioHistory": [
+    {
+      "timestamp": 1748537642257,
+      "value": 0,
+      "dailyChangePercent": 0
+    }
+  ],
+  "transactions": [
+    {
+      "type": "rebalance",
+      "transaction": "0x97ff0dc037a3e53d0bf730faa965cc894a57ed401b27d725ca31e76d4631430a",
+      "assets": 0,
+      "timestamp": 1748537642257
+    }
+  ],
+  "riskLevel": "moderate",
+  "overallStats": {
+    "totalReturn": 0,
+    "maxDrawdown": 0,
+    "sharpeRatio": 0,
+    "volatility": 0
+  }
+}

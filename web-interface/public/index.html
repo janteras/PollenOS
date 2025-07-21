@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>PollenOS - AI Trading Bot Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <img src="pollen-logo.png" alt="PollenOS" class="logo">
+                <h1>Welcome to PollenOS</h1>
+                <p class="subtitle">Open-source AI trading bot platform powered by Pollen on Base blockchain</p>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot" id="connectionStatus"></span>
+                <span id="connectionText">Connecting...</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <div class="dashboard">
+            <!-- Network Configuration -->
+            <section class="card network-config">
+                <h2><i class="fas fa-network-wired"></i> Network Configuration</h2>
+                <div class="config-row">
+                    <label for="networkSelect">Select Network:</label>
+                    <select id="networkSelect" class="form-control">
+                        <option value="base-sepolia" selected>Base Sepolia (Recommended)</option>
+                        <option value="base-mainnet">Base Mainnet</option>
+                        <option value="avalanche-mainnet">Avalanche Mainnet</option>
+                    </select>
+                    <button id="saveNetwork" class="btn btn-primary">Save Network</button>
+                </div>
+                <div class="network-info">
+                    <span id="networkInfo">Connected to Base Sepolia Testnet</span>
+                </div>
+                <div class="faucet-buttons" id="faucetButtons" style="display: none;">
+                    <h3>Testnet Faucets</h3>
+                    <div class="faucet-button-group">
+                        <a href="https://beta.pollen.id" target="_blank" class="btn btn-faucet btn-pln">
+                            <i class="fas fa-coins"></i> PLN Faucet
+                        </a>
+                        <a href="https://faucet.quicknode.com/base/sepolia/" target="_blank" class="btn btn-faucet btn-eth">
+                            <i class="fas fa-tint"></i> Sepolia ETH Faucet
+                        </a>
+                    </div>
+                    <p class="faucet-info">Get test tokens for Base Sepolia development</p>
+                </div>
+            </section>
+
+            <!-- Bot Configuration -->
+            <section class="card bot-config">
+                <h2><i class="fas fa-robot"></i> Bot Configuration</h2>
+                <div class="config-header">
+                    <p>Add Ethereum private keys and select trading strategies for your bots</p>
+                    <div class="config-buttons">
+                        <button id="uploadConfig" class="btn btn-secondary">
+                            <i class="fas fa-upload"></i> Upload Configuration
+                        </button>
+                        <button id="addBot" class="btn btn-success">
+                            <i class="fas fa-plus"></i> Add New Bot
+                        </button>
+                    </div>
+                </div>
+
+                <div id="botList" class="bot-list">
+                    <!-- Bot configurations will be dynamically added here -->
+                </div>
+            </section>
+
+            <!-- Strategy Templates -->
+            <section class="card strategy-templates">
+                <h2><i class="fas fa-chart-line"></i> Trading Strategy Templates</h2>
+                <div class="strategy-grid">
+                    <div class="strategy-card" data-strategy="conservative">
+                        <h3>Conservative</h3>
+                        <p>Low risk, steady growth</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                    <div class="strategy-card" data-strategy="momentum">
+                        <h3>Momentum</h3>
+                        <p>Trend-following strategy</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                    <div class="strategy-card" data-strategy="technical">
+                        <h3>Technical</h3>
+                        <p>Technical indicators based</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                    <div class="strategy-card" data-strategy="mean-reversion">
+                        <h3>Mean Reversion</h3>
+                        <p>Price reversion strategy</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                    <div class="strategy-card" data-strategy="breakout">
+                        <h3>Breakout</h3>
+                        <p>Price breakout detection</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                    <div class="strategy-card" data-strategy="scalping">
+                        <h3>Scalping</h3>
+                        <p>High-frequency trading</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                    <div class="strategy-card" data-strategy="grid-trading">
+                        <h3>Grid Trading</h3>
+                        <p>Grid-based positioning</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                    <div class="strategy-card" data-strategy="high-frequency">
+                        <h3>High Frequency</h3>
+                        <p>Ultra-fast execution</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                    <div class="strategy-card" data-strategy="arbitrage">
+                        <h3>Arbitrage</h3>
+                        <p>Price difference exploitation</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                    <div class="strategy-card" data-strategy="cross-chain-arbitrage">
+                        <h3>Cross-Chain Arbitrage</h3>
+                        <p>Multi-chain opportunities</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                    <div class="strategy-card" data-strategy="liquidity-providing">
+                        <h3>Liquidity Providing</h3>
+                        <p>Market making strategy</p>
+                        <span class="usage-indicator"></span>
+                    </div>
+                </div>
+
+                <div class="custom-strategy">
+                    <h3>Custom Strategy Upload</h3>
+                    <div class="upload-area" id="customStrategyUpload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & drop your custom strategy file here or click to browse</p>
+                        <input type="file" id="strategyFile" accept=".js,.json" hidden>
+                    </div>
+
+                    <!-- Hidden file input for configuration upload -->
+                    <input type="file" id="configFile" accept=".json" hidden>
+                </div>
+            </section>
+
+            <!-- System Control -->
+            <section class="card system-control">
+                <h2><i class="fas fa-cogs"></i> System Control</h2>
+                <div class="control-buttons">
+                    <button id="startSystem" class="btn btn-success btn-large">
+                        <i class="fas fa-play"></i> Start Multi-Bot System
+                    </button>
+                    <button id="restartSystem" class="btn btn-warning btn-large">
+                        <i class="fas fa-redo"></i> Restart System
+                    </button>
+                    <button id="stopSystem" class="btn btn-danger btn-large">
+                        <i class="fas fa-stop"></i> Stop System
+                    </button>
+                </div>
+                <div class="config-actions">
+                    <button id="saveConfig" class="btn btn-secondary">
+                        <i class="fas fa-save"></i> Save Configuration
+                    </button>
+                </div>
+                <div class="system-status">
+                    <span id="systemStatus">System Ready</span>
+                </div>
+            </section>
+
+            <!-- Live Monitoring Dashboard -->
+            <section class="card monitoring-dashboard">
+                <h2><i class="fas fa-chart-area"></i> Live Monitoring Dashboard</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 id="activeBots">0</h3>
+                            <p>Active Bots</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 id="totalValue">$0.00</h3>
+                            <p>Total Portfolio Value</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 id="performance24h">+0.00%</h3>
+                            <p>24H Performance</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 id="recentTxs">0</h3>
+                            <p>Recent Transactions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Bot Status -->
+            <section class="card bot-status">
+                <h2><i class="fas fa-heartbeat"></i> Live Bot Status</h2>
+                <div class="status-header">
+                    <button id="refreshStatus" class="btn btn-secondary">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                <div id="botStatusList" class="bot-status-list">
+                    <!-- Bot status cards will be dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Performance Charts -->
+            <section class="card performance-charts" id="performance-charts">
+                <h2><i class="fas fa-chart-line"></i> Performance Charts</h2>
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Portfolio Performance</h3>
+                        <canvas id="performanceChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Trading Activity</h3>
+                        <canvas id="activityChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Risk Distribution</h3>
+                        <canvas id="riskChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Daily Returns</h3>
+                        <canvas id="returnsChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Transactions -->
+            <section class="card recent-transactions">
+                <h2><i class="fas fa-history"></i> Recent Transactions</h2>
+                <div class="transaction-list" id="transactionList">
+                    <!-- Transactions will be populated here -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="addBotModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Trading Bot</h2>
+            <form id="addBotForm">
+                <div class="form-group">
+                    <label for="botName">Bot Name:</label>
+                    <input type="text" id="botName" class="form-control" placeholder="Enter bot name" required>
+                </div>
+                <div class="form-group">
+                    <label for="privateKey">Private Key:</label>
+                    <input type="password" id="privateKey" class="form-control" placeholder="Enter Ethereum private key" required>
+                    <small class="form-text">Your private key is stored locally and never transmitted</small>
+                </div>
+                <div class="form-group">
+                    <label for="strategySelect">Trading Strategy:</label>
+                    <select id="strategySelect" class="form-control" required>
+                        <option value="">Select a strategy</option>
+                        <option value="conservative">Conservative</option>
+                        <option value="momentum">Momentum</option>
+                        <option value="technical">Technical</option>
+                        <option value="mean-reversion">Mean Reversion</option>
+                        <option value="breakout">Breakout</option>
+                        <option value="scalping">Scalping</option>
+                        <option value="grid-trading">Grid Trading</option>
+                        <option value="high-frequency">High Frequency</option>
+                        <option value="arbitrage">Arbitrage</option>
+                        <option value="cross-chain-arbitrage">Cross-Chain Arbitrage</option>
+                        <option value="liquidity-providing">Liquidity Providing</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="riskLevel">Risk Level:</label>
+                    <select id="riskLevel" class="form-control">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-secondary" id="cancelBot">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Bot</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

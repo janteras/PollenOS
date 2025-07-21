@@ -1,0 +1,57 @@
+2025-07-07T20:36:52.050Z info: 🚀 Creating Base Sepolia Portfolios for All Trading Bots
+2025-07-07T20:36:52.052Z info: ════════════════════════════════════════════════════════════
+2025-07-07T20:36:52.175Z info: 🌐 Connected to Base Sepolia (Chain ID: 84532)
+2025-07-07T20:36:52.245Z info: 
+🔄 Processing Conservative Bot (0x561529036AB886c1FD3D112360383D79fBA9E71c)
+2025-07-07T20:36:52.363Z info: ✅ Conservative Bot already has portfolio
+2025-07-07T20:36:52.364Z info: ⏳ Waiting 10 seconds before next bot...
+2025-07-07T20:37:02.371Z info: 
+🔄 Processing Momentum Bot (0x48B2353954496679CF7C73d239bc12098cB0C5B4)
+2025-07-07T20:37:02.468Z info: ✅ Momentum Bot already has portfolio
+2025-07-07T20:37:02.469Z info: ⏳ Waiting 10 seconds before next bot...
+2025-07-07T20:37:12.476Z info: 
+🔄 Processing Technical Bot (0x43f76157E9696302E287181828cB3B0C6B89d31e)
+2025-07-07T20:37:12.715Z info: 💰 Technical Bot PLN Balance: 50.0
+2025-07-07T20:37:12.837Z info: 📝 Technical Bot creating portfolio with 20 PLN...
+2025-07-07T20:37:13.679Z info: 📡 Technical Bot transaction sent: 0xa00f252adb0331ebb1ffb9e8f4cae7520b037e132e59f220040a0646ca4ef462
+2025-07-07T20:37:13.783Z info: ✅ Technical Bot portfolio created successfully!
+2025-07-07T20:37:13.784Z info: 🔗 Explorer: https://sepolia.basescan.org/tx/0xa00f252adb0331ebb1ffb9e8f4cae7520b037e132e59f220040a0646ca4ef462
+2025-07-07T20:37:13.784Z info: ⏳ Waiting 10 seconds before next bot...
+2025-07-07T20:37:23.796Z info: 
+🔄 Processing Mean Reversion Bot (0xC02764913ce2F23B094F0338a711EFD984024A46)
+2025-07-07T20:37:23.997Z info: 💰 Mean Reversion Bot PLN Balance: 50.0
+2025-07-07T20:37:24.098Z info: 📝 Mean Reversion Bot creating portfolio with 20 PLN...
+2025-07-07T20:37:24.699Z info: 📡 Mean Reversion Bot transaction sent: 0x1084d20d933e34462f6024e4cbc8ecfb1ce69d5ce90f4b717179aaa29eade5ee
+2025-07-07T20:37:29.173Z info: ✅ Mean Reversion Bot portfolio created successfully!
+2025-07-07T20:37:29.174Z info: 🔗 Explorer: https://sepolia.basescan.org/tx/0x1084d20d933e34462f6024e4cbc8ecfb1ce69d5ce90f4b717179aaa29eade5ee
+2025-07-07T20:37:29.174Z info: ⏳ Waiting 10 seconds before next bot...
+2025-07-07T20:37:39.187Z info: 
+🔄 Processing Breakout Bot (0x00FfF703fa6837A1a46b3DF9B6a047404046379E)
+2025-07-07T20:37:39.287Z info: ✅ Breakout Bot already has portfolio
+2025-07-07T20:37:39.287Z info: ⏳ Waiting 10 seconds before next bot...
+2025-07-07T20:37:49.301Z info: 
+🔄 Processing Scalping Bot (0xD5404dd1Af9701A5ba8C8064240529594849450D)
+2025-07-07T20:37:49.595Z info: 💰 Scalping Bot PLN Balance: 25.0
+2025-07-07T20:37:49.795Z info: 🔓 Scalping Bot approving PLN spending...
+2025-07-07T20:37:54.580Z info: ✅ Scalping Bot PLN approved
+2025-07-07T20:37:54.580Z info: 📝 Scalping Bot creating portfolio with 12 PLN...
+2025-07-07T20:37:55.162Z info: 📡 Scalping Bot transaction sent: 0x3fa556e2aac2983f55fc0b936e3d00bff237f83df3d4d847c071cf8098b27399
+2025-07-07T20:37:59.493Z info: ✅ Scalping Bot portfolio created successfully!
+2025-07-07T20:37:59.493Z info: 🔗 Explorer: https://sepolia.basescan.org/tx/0x3fa556e2aac2983f55fc0b936e3d00bff237f83df3d4d847c071cf8098b27399
+2025-07-07T20:37:59.493Z info: ⏳ Waiting 10 seconds before next bot...
+2025-07-07T20:38:09.506Z info: 
+🔄 Processing Grid Trading Bot (0x0E27bFe07Fb67497b093AFA6c94BF76a2A81ee13)
+2025-07-07T20:38:09.718Z info: 💰 Grid Trading Bot PLN Balance: 25.0
+2025-07-07T20:38:09.833Z info: 🔓 Grid Trading Bot approving PLN spending...
+2025-07-07T20:38:14.625Z info: ✅ Grid Trading Bot PLN approved
+2025-07-07T20:38:14.625Z info: 📝 Grid Trading Bot creating portfolio with 12 PLN...
+2025-07-07T20:38:15.265Z info: 📡 Grid Trading Bot transaction sent: 0x81c201fb41bb92b396226cbb96bb8ded56000fd2664347a751d91c04e0102e73
+2025-07-07T20:38:19.830Z info: ✅ Grid Trading Bot portfolio created successfully!
+2025-07-07T20:38:19.830Z info: 🔗 Explorer: https://sepolia.basescan.org/tx/0x81c201fb41bb92b396226cbb96bb8ded56000fd2664347a751d91c04e0102e73
+2025-07-07T20:38:19.831Z info: 
+════════════════════════════════════════════════════════════
+2025-07-07T20:38:19.831Z info: 📊 PORTFOLIO CREATION SUMMARY
+2025-07-07T20:38:19.831Z info: ════════════════════════════════════════════════════════════
+2025-07-07T20:38:19.831Z info: ✅ Successful: 7/7 bots
+2025-07-07T20:38:19.831Z info: ❌ Failed: 0/7 bots
+2025-07-07T20:38:19.831Z info: 🎉 All bot portfolios created successfully!

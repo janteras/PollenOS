@@ -1,0 +1,15 @@
+{
+  "botId": "4",
+  "strategy": "momentum",
+  "startDate": 1748528880395,
+  "initialValue": 0,
+  "portfolioHistory": [],
+  "transactions": [],
+  "riskLevel": "moderate",
+  "overallStats": {
+    "totalReturn": 0,
+    "maxDrawdown": 0,
+    "sharpeRatio": 0,
+    "volatility": 0
+  }
+}

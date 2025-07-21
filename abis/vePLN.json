@@ -1,0 +1,124 @@
+{
+  "name": "vePLN",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [{"name": "", "type": "string"}],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [{"name": "", "type": "string"}],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [{"name": "", "type": "uint8"}],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [{"name": "account", "type": "address"}],
+      "name": "balanceOf",
+      "outputs": [{"name": "", "type": "uint256"}],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [{"name": "", "type": "uint256"}],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {"name": "amount", "type": "uint256"},
+        {"name": "lockDuration", "type": "uint256"}
+      ],
+      "name": "stake",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [{"name": "account", "type": "address"}],
+      "name": "getLockInfo",
+      "outputs": [
+        {"name": "amount", "type": "uint256"},
+        {"name": "lockEnd", "type": "uint256"}
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [{"name": "account", "type": "address"}],
+      "name": "locked",
+      "outputs": [
+        {"name": "amount", "type": "uint256"},
+        {"name": "end", "type": "uint256"}
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {"indexed": true, "name": "user", "type": "address"},
+        {"indexed": false, "name": "amount", "type": "uint256"},
+        {"indexed": false, "name": "lockDuration", "type": "uint256"},
+        {"indexed": false, "name": "lockEnd", "type": "uint256"}
+      ],
+      "name": "Staked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {"indexed": true, "name": "user", "type": "address"},
+        {"indexed": false, "name": "amount", "type": "uint256"}
+      ],
+      "name": "Withdrawn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {"indexed": true, "name": "user", "type": "address"},
+        {"indexed": false, "name": "newLockEnd", "type": "uint256"}
+      ],
+      "name": "LockExtended",
+      "type": "event"
+    }
+  ]
+}

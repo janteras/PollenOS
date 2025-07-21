@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Details - PollenOS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bot Details</h1>
+            <nav>
+                <a href="index.html" class="btn-secondary">← Back to Dashboard</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="bot-detail-header">
+                <h2 id="botTitle">Bot Details</h2>
+                <div class="status-badge" id="statusBadge">Loading...</div>
+            </div>
+
+            <div class="detail-grid">
+                <!-- Bot Configuration -->
+                <section class="detail-card">
+                    <h3>Configuration</h3>
+                    <div id="botConfig">
+                        <p><strong>Strategy:</strong> <span id="strategyName">-</span></p>
+                        <p><strong>Risk Level:</strong> <span id="riskLevel">-</span></p>
+                        <p><strong>Max Allocation:</strong> <span id="maxAllocation">-</span></p>
+                        <p><strong>Trading Interval:</strong> <span id="tradingInterval">-</span></p>
+                    </div>
+                </section>
+
+                <!-- Portfolio Status -->
+                <section class="detail-card">
+                    <h3>Portfolio Status</h3>
+                    <div id="portfolioStatus">
+                        <p><strong>Total Value:</strong> <span id="totalValue">-</span></p>
+                        <p><strong>Last Rebalance:</strong> <span id="lastRebalance">-</span></p>
+                        <p><strong>Performance:</strong> <span id="performance">-</span></p>
+                        <p><strong>Gas Used (24h):</strong> <span id="gasUsed">-</span></p>
+                    </div>
+                </section>
+
+                <!-- Recent Transactions -->
+                <section class="detail-card full-width">
+                    <h3>Recent Transactions</h3>
+                    <div class="transaction-list" id="transactionList">
+                        <!-- Transactions will be populated dynamically -->
+                    </div>
+                </section>
+
+                <!-- Performance Chart -->
+                <section class="detail-card full-width">
+                    <h3>Performance Chart</h3>
+                    <div class="chart-container" id="performanceChart">
+                        <p>Chart functionality will be available in future updates</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Get bot ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const botId = urlParams.get('id');
+
+        if (botId) {
+            loadBotDetails(botId);
+        } else {
+            document.getElementById('botTitle').textContent = 'No bot specified';
+        }
+
+        function loadBotDetails(id) {
+            document.getElementById('botTitle').textContent = `Bot ${id} Details`;
+            
+            // Fetch bot details from API
+            fetch(`/api/bots/${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    updateBotDetails(data);
+                })
+                .catch(error => {
+                    console.error('Error loading bot details:', error);
+                    document.getElementById('statusBadge').textContent = 'Error Loading';
+                    document.getElementById('statusBadge').className = 'status-badge error';
+                });
+        }
+
+        function updateBotDetails(bot) {
+            // Update status badge
+            const statusBadge = document.getElementById('statusBadge');
+            statusBadge.textContent = bot.status || 'Unknown';
+            statusBadge.className = `status-badge ${bot.status || 'unknown'}`;
+
+            // Update configuration
+            document.getElementById('strategyName').textContent = bot.strategy || '-';
+            document.getElementById('riskLevel').textContent = bot.riskLevel || '-';
+            document.getElementById('maxAllocation').textContent = bot.maxAllocation || '-';
+            document.getElementById('tradingInterval').textContent = bot.tradingInterval || '-';
+
+            // Update portfolio status
+            document.getElementById('totalValue').textContent = bot.portfolioValue || '-';
+            document.getElementById('lastRebalance').textContent = bot.lastRebalance || '-';
+            document.getElementById('performance').textContent = bot.performance || '-';
+            document.getElementById('gasUsed').textContent = bot.gasUsed24h || '-';
+
+            // Update transactions
+            const transactionList = document.getElementById('transactionList');
+            if (bot.recentTransactions && bot.recentTransactions.length > 0) {
+                transactionList.innerHTML = bot.recentTransactions.map(tx => `
+                    <div class="transaction-item">
+                        <div class="tx-hash">
+                            <a href="https://sepolia.basescan.org/tx/${tx.hash}" target="_blank">
+                                ${tx.hash.substring(0, 10)}...${tx.hash.substring(tx.hash.length - 8)}
+                            </a>
+                        </div>
+                        <div class="tx-details">
+                            <span class="tx-type">${tx.type}</span>
+                            <span class="tx-time">${tx.timestamp}</span>
+                        </div>
+                        <div class="tx-gas">Gas: ${tx.gasUsed}</div>
+                    </div>
+                `).join('');
+            } else {
+                transactionList.innerHTML = '<p>No recent transactions</p>';
+            }
+        }
+    </script>
+</body>
+</html>

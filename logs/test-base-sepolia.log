@@ -1,0 +1,23 @@
+{"level":"info","message":"🚀 Starting Base Sepolia Test Suite","timestamp":"2025-07-01T09:16:42.031Z"}
+{"level":"info","message":"\n=== 🔌 Testing Network Connectivity ===","timestamp":"2025-07-01T09:16:42.072Z"}
+{"level":"info","message":"Connected to: unknown (Chain ID: 84532)","timestamp":"2025-07-01T09:16:42.580Z"}
+{"level":"info","message":"Using wallet: 0x561529036AB886c1FD3D112360383D79fBA9E71c","timestamp":"2025-07-01T09:16:42.584Z"}
+{"level":"info","message":"ETH Balance: 0.099998568976282204 ETH","timestamp":"2025-07-01T09:16:42.764Z"}
+{"level":"info","message":"\n=== 💰 Testing Token Balances ===","timestamp":"2025-07-01T09:16:42.767Z"}
+{"code":"BAD_DATA","info":{"method":"balanceOf","signature":"balanceOf(address)"},"level":"error","message":"❌ Test failed: could not decode result data (value=\"0x\", info={ \"method\": \"balanceOf\", \"signature\": \"balanceOf(address)\" }, code=BAD_DATA, version=6.0.0)","stack":"Error: could not decode result data (value=\"0x\", info={ \"method\": \"balanceOf\", \"signature\": \"balanceOf(address)\" }, code=BAD_DATA, version=6.0.0)\n    at makeError (/Users/apple/Downloads/Pods/node_modules/ethers/lib.commonjs/utils/errors.js:121:21)\n    at assert (/Users/apple/Downloads/Pods/node_modules/ethers/lib.commonjs/utils/errors.js:138:15)\n    at Interface.decodeFunctionResult (/Users/apple/Downloads/Pods/node_modules/ethers/lib.commonjs/abi/interface.js:664:31)\n    at WrappedMethod.staticCallResult (/Users/apple/Downloads/Pods/node_modules/ethers/lib.commonjs/contract/contract.js:257:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async WrappedMethod.staticCall (/Users/apple/Downloads/Pods/node_modules/ethers/lib.commonjs/contract/contract.js:222:24)\n    at async Object.apply (/Users/apple/Downloads/Pods/node_modules/ethers/lib.commonjs/contract/contract.js:183:28)\n    at async BaseSepoliaTester.testTokenBalances (/Users/apple/Downloads/Pods/scripts/test-base-sepolia.js:114:24)\n    at async BaseSepoliaTester.runTests (/Users/apple/Downloads/Pods/scripts/test-base-sepolia.js:80:7)\n    at async main (/Users/apple/Downloads/Pods/scripts/test-base-sepolia.js:216:5)","timestamp":"2025-07-01T09:16:42.942Z","value":"0x"}
+{"level":"info","message":"🚀 Starting Base Sepolia Test Suite","timestamp":"2025-07-01T09:18:34.289Z"}
+{"level":"info","message":"\n=== 🔌 Testing Network Connectivity ===","timestamp":"2025-07-01T09:18:34.345Z"}
+{"level":"info","message":"Connected to: unknown (Chain ID: 84532)","timestamp":"2025-07-01T09:18:34.930Z"}
+{"level":"info","message":"Using wallet: 0x561529036AB886c1FD3D112360383D79fBA9E71c","timestamp":"2025-07-01T09:18:34.932Z"}
+{"level":"info","message":"ETH Balance: 0.099998568976282204 ETH","timestamp":"2025-07-01T09:18:35.100Z"}
+{"level":"info","message":"\n=== 💰 Testing Token Balances ===","timestamp":"2025-07-01T09:18:35.102Z"}
+{"level":"error","message":"Error checking token balances: could not decode result data (value=\"0x\", info={ \"method\": \"symbol\", \"signature\": \"symbol()\" }, code=BAD_DATA, version=6.0.0)","timestamp":"2025-07-01T09:18:35.305Z"}
+{"level":"info","message":"Contracts initialized successfully","timestamp":"2025-07-01T09:21:29.003Z"}
+{"level":"info","message":"🚀 Starting Base Sepolia Test Suite","timestamp":"2025-07-01T09:21:29.012Z"}
+{"level":"info","message":"\n=== 🔌 Testing Network Connectivity ===","timestamp":"2025-07-01T09:21:29.013Z"}
+{"level":"info","message":"Connected to: unknown (Chain ID: 84532)","timestamp":"2025-07-01T09:21:29.240Z"}
+{"level":"info","message":"Using wallet: 0x561529036AB886c1FD3D112360383D79fBA9E71c","timestamp":"2025-07-01T09:21:29.240Z"}
+{"level":"info","message":"ETH Balance: 0.099998568976282204 ETH","timestamp":"2025-07-01T09:21:29.371Z"}
+{"level":"info","message":"\n=== 💰 Testing Token Balances ===","timestamp":"2025-07-01T09:21:29.371Z"}
+{"level":"info","message":"Checking PLN token balance...","timestamp":"2025-07-01T09:21:29.372Z"}
+{"level":"error","message":"Error in testTokenBalances: could not decode result data (value=\"0x\", info={ \"method\": \"balanceOf\", \"signature\": \"balanceOf(address)\" }, code=BAD_DATA, version=6.0.0)","timestamp":"2025-07-01T09:21:29.500Z"}

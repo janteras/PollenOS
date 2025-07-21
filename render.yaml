@@ -1,0 +1,23 @@
+services:
+  - type: worker
+    name: pollen-trading-bot
+    env: node
+    buildCommand: npm install
+    startCommand: npm run multi -- --extended-backoff
+    plan: free
+    envVars:
+      - key: NODE_VERSION
+        value: 16.14.0
+      - key: EXTENDED_BACKOFF
+        value: "true"
+      - key: NODE_ENV
+        value: production
+      # Add these sensitive variables in the Render dashboard
+      # - key: INFURA_API_KEY
+      #   sync: false
+      # - key: ETHEREUM_PRIVATE_KEY
+      #   sync: false
+      # - key: POLLEN_CONTRACT_AVALANCHE
+      #   sync: false
+      # - key: BOT_ID
+      #   sync: false

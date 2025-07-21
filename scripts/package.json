@@ -1,0 +1,16 @@
+{
+  "name": "pods-trading-bot",
+  "version": "1.0.0",
+  "description": "Advanced trading bot for Pods Finance",
+  "main": "run-bot.js",
+  "scripts": {
+    "start": "node run-bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "ethers": "^5.7.2",
+    "technicalindicators": "^3.1.0"
+  }
+}

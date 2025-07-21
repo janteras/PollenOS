@@ -1,0 +1,95 @@
+{
+  "timestamp": "2025-06-13T20:42:40.944Z",
+  "network": {
+    "connected": true,
+    "chainId": 43114,
+    "blockNumber": 63805453
+  },
+  "contracts": {
+    "plnToken": {
+      "name": "Pollen",
+      "symbol": "PLN",
+      "totalSupply": "184612786.115644188596213187"
+    },
+    "vePlnContract": {
+      "name": "Locked Pollen",
+      "symbol": "vePLN",
+      "totalSupply": "8595792.393194977898702311"
+    }
+  },
+  "userBalances": {
+    "0x7643264933d196215f42B10D23e91Fd096223bD7": {
+      "error": "missing response for request (value=[ { \"code\": -32005, \"data\": { \"see\": \"https://infura.io/dashboard\" }, \"message\": \"Too Many Requests\" }, { \"id\": 14, \"jsonrpc\": \"2.0\", \"result\": \"0xa86a\" } ], info={ \"payload\": { \"id\": 13, \"jsonrpc\": \"2.0\", \"method\": \"eth_call\", \"params\": [ { \"data\": \"0x70a082310000000000000000000000007643264933d196215f42b10d23e91fd096223bd7\", \"to\": \"0x7b2b702706d9b361dfe3f00bd138c0cfda7fb2cf\" }, \"latest\" ] } }, code=BAD_DATA, version=6.14.4)"
+    },
+    "0x0d866310C98aa6c037b73D9b1f04B6966E52Cbd8": {
+      "error": "missing response for request (value=[ { \"code\": -32005, \"data\": { \"see\": \"https://infura.io/dashboard\" }, \"message\": \"Too Many Requests\" }, { \"code\": -32005, \"data\": { \"see\": \"https://infura.io/dashboard\" }, \"message\": \"Too Many Requests\" } ], info={ \"payload\": { \"id\": 15, \"jsonrpc\": \"2.0\", \"method\": \"eth_call\", \"params\": [ { \"data\": \"0x70a082310000000000000000000000000d866310c98aa6c037b73d9b1f04b6966e52cbd8\", \"to\": \"0x7b2b702706d9b361dfe3f00bd138c0cfda7fb2cf\" }, \"latest\" ] } }, code=BAD_DATA, version=6.14.4)"
+    },
+    "0x8b7a6EfAB54Aa43D4b4Ca5abcBd5F6194382B961": {
+      "error": "missing response for request (value=[ { \"code\": -32005, \"data\": { \"see\": \"https://infura.io/dashboard\" }, \"message\": \"Too Many Requests\" }, { \"code\": -32005, \"data\": { \"see\": \"https://infura.io/dashboard\" }, \"message\": \"Too Many Requests\" } ], info={ \"payload\": { \"id\": 19, \"jsonrpc\": \"2.0\", \"method\": \"eth_call\", \"params\": [ { \"data\": \"0x70a082310000000000000000000000008b7a6efab54aa43d4b4ca5abcbd5f6194382b961\", \"to\": \"0x2ecb6f9df29163758024d416997764922e4528d4\" }, \"latest\" ] } }, code=BAD_DATA, version=6.14.4)"
+    },
+    "0xeAb282064c7150f63fD1F7EC6Ecc0Dc9f63DD8F5": {
+      "error": "missing response for request (value=[ { \"code\": -32005, \"data\": { \"see\": \"https://infura.io/dashboard\" }, \"message\": \"Too Many Requests\" }, { \"id\": 24, \"jsonrpc\": \"2.0\", \"result\": \"0xa86a\" } ], info={ \"payload\": { \"id\": 23, \"jsonrpc\": \"2.0\", \"method\": \"eth_call\", \"params\": [ { \"data\": \"0x70a08231000000000000000000000000eab282064c7150f63fd1f7ec6ecc0dc9f63dd8f5\", \"to\": \"0x2ecb6f9df29163758024d416997764922e4528d4\" }, \"latest\" ] } }, code=BAD_DATA, version=6.14.4)"
+    }
+  },
+  "botConfigurations": {
+    "1": {
+      "name": "Momentum",
+      "risk": "medium",
+      "configExists": true,
+      "hasStrategy": true,
+      "hasPollenContract": true,
+      "hasPlnToken": true,
+      "hasBotId": true,
+      "configured": true
+    },
+    "2": {
+      "name": "Mean-Reversion",
+      "risk": "medium-high",
+      "configExists": true,
+      "hasStrategy": true,
+      "hasPollenContract": true,
+      "hasPlnToken": true,
+      "hasBotId": true,
+      "configured": true
+    },
+    "3": {
+      "name": "Technical-Conservative",
+      "risk": "low",
+      "configExists": true,
+      "hasStrategy": true,
+      "hasPollenContract": true,
+      "hasPlnToken": true,
+      "hasBotId": true,
+      "configured": true
+    },
+    "4": {
+      "name": "Breakout",
+      "risk": "high",
+      "configExists": true,
+      "hasStrategy": true,
+      "hasPollenContract": true,
+      "hasPlnToken": true,
+      "hasBotId": true,
+      "configured": true
+    },
+    "5": {
+      "name": "Multi-Timeframe",
+      "risk": "medium",
+      "configExists": true,
+      "hasStrategy": true,
+      "hasPollenContract": true,
+      "hasPlnToken": true,
+      "hasBotId": true,
+      "configured": true
+    }
+  },
+  "pollenAppIntegration": {
+    "appUrl": "https://app.pollen.id",
+    "contracts": {
+      "PLN_TOKEN": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+      "VEPLN_CONTRACT": "0x2eCB6F9dF29163758024d416997764922E4528d4",
+      "POLLEN_DAO": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717"
+    },
+    "accessible": true
+  }
+}

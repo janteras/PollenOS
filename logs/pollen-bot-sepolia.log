@@ -1,0 +1,1084 @@
+[2025-06-30T15:30:40.548Z] 2025-06-30 16:30:40 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+2025-06-30 16:30:40 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 16:30:40 [32minfo[39m: Step 1: Initializing TradingView integration...
+2025-06-30 16:30:40 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T15:30:41.384Z] 2025-06-30 16:30:41 [31merror[39m: TradingView authentication failed:
+[2025-06-30T15:30:41.391Z] 2025-06-30 16:30:41 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T15:30:41.619Z] 2025-06-30 16:30:41 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T15:30:41.621Z] 2025-06-30 16:30:41 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+[2025-06-30T15:30:41.623Z] 2025-06-30 16:30:41 [33mwarn[39m: Error getting signal for PLN:
+[2025-06-30T15:30:41.624Z] 2025-06-30 16:30:41 [32minfo[39m: Successfully fetched signals for 0 assets
+[2025-06-30T15:30:41.625Z] 2025-06-30 16:30:41 [32minfo[39m: ✅ TradingView integration initialized
+2025-06-30 16:30:41 [32minfo[39m: ✅ TradingView integration completed
+2025-06-30 16:30:41 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T15:30:41.626Z] 2025-06-30 16:30:41 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T15:30:41.635Z] 2025-06-30 16:30:41 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T15:30:41.812Z] 2025-06-30 16:30:41 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T15:30:41.996Z] 2025-06-30 16:30:41 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T15:30:42.122Z] 2025-06-30 16:30:42 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T15:30:42.326Z] 2025-06-30 16:30:42 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T15:30:42.326Z] 2025-06-30 16:30:42 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+2025-06-30 16:30:42 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 16:30:42 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 16:30:42 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 16:30:42 [32minfo[39m: Step 4: Initializing main trading bot...
+2025-06-30 16:30:42 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T15:30:42.336Z] 2025-06-30 16:30:42 [32minfo[39m: Pollen Contract Interface initialized
+2025-06-30 16:30:42 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T15:30:42.451Z] 2025-06-30 16:30:42 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T15:30:42.585Z] 2025-06-30 16:30:42 [32minfo[39m: Wallet AVAX balance: 0.024979380787562609
+[2025-06-30T15:30:42.723Z] 2025-06-30 16:30:42 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:30:42.723Z] 2025-06-30 16:30:42 [32minfo[39m: PLN balance: 0
+[2025-06-30T15:30:42.859Z] 2025-06-30 16:30:42 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:30:42.860Z] 2025-06-30 16:30:42 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T15:30:42.861Z] 2025-06-30 16:30:42 [32minfo[39m: Initializing Enhanced Trading Engine...
+[2025-06-30T15:30:42.861Z] 2025-06-30 16:30:42 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T15:30:42.862Z] 2025-06-30 16:30:42 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T15:30:42.862Z] 2025-06-30 16:30:42 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T15:30:43.845Z] 2025-06-30 16:30:43 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T15:30:46.846Z] 2025-06-30 16:30:46 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T15:30:46.851Z] 2025-06-30 16:30:46 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T15:30:47.067Z] 2025-06-30 16:30:47 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T15:30:50.073Z] 2025-06-30 16:30:50 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T15:31:09.155Z] 2025-06-30 16:31:09 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+2025-06-30 16:31:09 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T15:31:12.238Z] 2025-06-30 16:31:12 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T15:31:12.579Z] 2025-06-30 16:31:12 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:31:12.905Z] 2025-06-30 16:31:12 [32minfo[39m: Verification complete. Results:
+[2025-06-30T15:31:12.910Z] 2025-06-30 16:31:12 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:31:13.077Z] 2025-06-30 16:31:13 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:31:13.078Z] 2025-06-30 16:31:13 [32minfo[39m: Current PLN balance: 0
+2025-06-30 16:31:13 [31merror[39m: Error initializing trading bot:
+[2025-06-30T15:31:13.078Z] 2025-06-30 16:31:13 [31merror[39m: Error initializing trading bot manager:
+2025-06-30 16:31:13 [31merror[39m: Full error details:
+2025-06-30 16:31:13 [31merror[39m: Error in main:
+[2025-06-30T15:31:19.194Z] 2025-06-30 16:31:19 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T15:31:19.196Z] 2025-06-30 16:31:19 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 16:31:19 [32minfo[39m: Step 1: Initializing TradingView integration...
+2025-06-30 16:31:19 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T15:31:19.522Z] 2025-06-30 16:31:19 [31merror[39m: TradingView authentication failed:
+[2025-06-30T15:31:19.522Z] 2025-06-30 16:31:19 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T15:31:19.718Z] 2025-06-30 16:31:19 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T15:31:19.720Z] 2025-06-30 16:31:19 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+2025-06-30 16:31:19 [33mwarn[39m: Error getting signal for PLN:
+2025-06-30 16:31:19 [32minfo[39m: Successfully fetched signals for 0 assets
+2025-06-30 16:31:19 [32minfo[39m: ✅ TradingView integration initialized
+2025-06-30 16:31:19 [32minfo[39m: ✅ TradingView integration completed
+2025-06-30 16:31:19 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+2025-06-30 16:31:19 [32minfo[39m: ✅ Portfolio optimizer completed
+2025-06-30 16:31:19 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T15:31:19.745Z] 2025-06-30 16:31:19 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T15:31:19.907Z] 2025-06-30 16:31:19 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T15:31:20.030Z] 2025-06-30 16:31:20 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T15:31:20.167Z] 2025-06-30 16:31:20 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T15:31:20.167Z] 2025-06-30 16:31:20 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+2025-06-30 16:31:20 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 16:31:20 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 16:31:20 [32minfo[39m: ✅ Pollen Virtual Contract completed
+[2025-06-30T15:31:20.167Z] 2025-06-30 16:31:20 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T15:31:20.167Z] 2025-06-30 16:31:20 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T15:31:20.170Z] 2025-06-30 16:31:20 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T15:31:20.171Z] 2025-06-30 16:31:20 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T15:31:20.278Z] 2025-06-30 16:31:20 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T15:31:20.415Z] 2025-06-30 16:31:20 [32minfo[39m: Wallet AVAX balance: 0.024979380787562609
+[2025-06-30T15:31:20.556Z] 2025-06-30 16:31:20 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:31:20.556Z] 2025-06-30 16:31:20 [32minfo[39m: PLN balance: 0
+[2025-06-30T15:31:20.696Z] 2025-06-30 16:31:20 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:31:20.698Z] 2025-06-30 16:31:20 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+2025-06-30 16:31:20 [32minfo[39m: Initializing Enhanced Trading Engine...
+2025-06-30 16:31:20 [32minfo[39m: Starting Pollen contract verification...
+2025-06-30 16:31:20 [32minfo[39m: Starting PLN token verification...
+2025-06-30 16:31:20 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T15:31:21.313Z] 2025-06-30 16:31:21 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T15:31:24.319Z] 2025-06-30 16:31:24 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T15:31:24.320Z] 2025-06-30 16:31:24 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T15:31:24.518Z] 2025-06-30 16:31:24 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T15:31:27.522Z] 2025-06-30 16:31:27 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T15:31:45.189Z] 2025-06-30 16:31:45 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+2025-06-30 16:31:45 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T15:31:47.977Z] 2025-06-30 16:31:47 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T15:31:48.325Z] 2025-06-30 16:31:48 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:31:48.735Z] 2025-06-30 16:31:48 [32minfo[39m: Verification complete. Results:
+[2025-06-30T15:31:48.737Z] 2025-06-30 16:31:48 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:31:48.961Z] 2025-06-30 16:31:48 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:31:48.961Z] 2025-06-30 16:31:48 [32minfo[39m: Current PLN balance: 0
+[2025-06-30T15:31:48.963Z] 2025-06-30 16:31:48 [31merror[39m: Error initializing trading bot:
+[2025-06-30T15:31:48.964Z] 2025-06-30 16:31:48 [31merror[39m: Error initializing trading bot manager:
+2025-06-30 16:31:48 [31merror[39m: Full error details:
+2025-06-30 16:31:48 [31merror[39m: Error in main:
+[2025-06-30T15:31:54.853Z] 2025-06-30 16:31:54 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T15:31:54.853Z] 2025-06-30 16:31:54 [32minfo[39m: Initializing trading bot manager...
+[2025-06-30T15:31:54.853Z] 2025-06-30 16:31:54 [32minfo[39m: Step 1: Initializing TradingView integration...
+[2025-06-30T15:31:54.853Z] 2025-06-30 16:31:54 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T15:31:55.147Z] 2025-06-30 16:31:55 [31merror[39m: TradingView authentication failed:
+[2025-06-30T15:31:55.148Z] 2025-06-30 16:31:55 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T15:31:55.288Z] 2025-06-30 16:31:55 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T15:31:55.289Z] 2025-06-30 16:31:55 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+[2025-06-30T15:31:55.289Z] 2025-06-30 16:31:55 [33mwarn[39m: Error getting signal for PLN:
+[2025-06-30T15:31:55.290Z] 2025-06-30 16:31:55 [32minfo[39m: Successfully fetched signals for 0 assets
+[2025-06-30T15:31:55.290Z] 2025-06-30 16:31:55 [32minfo[39m: ✅ TradingView integration initialized
+[2025-06-30T15:31:55.290Z] 2025-06-30 16:31:55 [32minfo[39m: ✅ TradingView integration completed
+2025-06-30 16:31:55 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T15:31:55.290Z] 2025-06-30 16:31:55 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T15:31:55.292Z] 2025-06-30 16:31:55 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T15:31:55.342Z] 2025-06-30 16:31:55 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T15:31:55.513Z] 2025-06-30 16:31:55 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T15:31:55.640Z] 2025-06-30 16:31:55 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T15:31:55.789Z] 2025-06-30 16:31:55 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T15:31:55.789Z] 2025-06-30 16:31:55 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+[2025-06-30T15:31:55.789Z] 2025-06-30 16:31:55 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 16:31:55 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 16:31:55 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 16:31:55 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T15:31:55.790Z] 2025-06-30 16:31:55 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T15:31:55.793Z] 2025-06-30 16:31:55 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T15:31:55.793Z] 2025-06-30 16:31:55 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T15:31:55.914Z] 2025-06-30 16:31:55 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T15:31:56.053Z] 2025-06-30 16:31:56 [32minfo[39m: Wallet AVAX balance: 0.024979380787562609
+[2025-06-30T15:31:56.222Z] 2025-06-30 16:31:56 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+2025-06-30 16:31:56 [32minfo[39m: PLN balance: 0
+[2025-06-30T15:31:56.363Z] 2025-06-30 16:31:56 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:31:56.364Z] 2025-06-30 16:31:56 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T15:31:56.365Z] 2025-06-30 16:31:56 [32minfo[39m: Initializing Enhanced Trading Engine...
+[2025-06-30T15:31:56.366Z] 2025-06-30 16:31:56 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T15:31:56.366Z] 2025-06-30 16:31:56 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T15:31:56.366Z] 2025-06-30 16:31:56 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T15:31:57.088Z] 2025-06-30 16:31:57 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T15:32:00.101Z] 2025-06-30 16:32:00 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T15:32:00.113Z] 2025-06-30 16:32:00 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T15:32:00.395Z] 2025-06-30 16:32:00 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T15:32:03.411Z] 2025-06-30 16:32:03 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T15:32:23.534Z] 2025-06-30 16:32:23 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+2025-06-30 16:32:23 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T15:32:28.299Z] 2025-06-30 16:32:28 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T15:32:28.621Z] 2025-06-30 16:32:28 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:32:28.948Z] 2025-06-30 16:32:28 [32minfo[39m: Verification complete. Results:
+[2025-06-30T15:32:28.949Z] 2025-06-30 16:32:28 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:32:29.164Z] 2025-06-30 16:32:29 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:32:29.167Z] 2025-06-30 16:32:29 [32minfo[39m: Current PLN balance: 0
+2025-06-30 16:32:29 [31merror[39m: Error initializing trading bot:
+[2025-06-30T15:32:29.168Z] 2025-06-30 16:32:29 [31merror[39m: Error initializing trading bot manager:
+2025-06-30 16:32:29 [31merror[39m: Full error details:
+2025-06-30 16:32:29 [31merror[39m: Error in main:
+[2025-06-30T15:32:42.765Z] 2025-06-30 16:32:42 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+2025-06-30 16:32:42 [32minfo[39m: Initializing trading bot manager...
+[2025-06-30T15:32:42.782Z] 2025-06-30 16:32:42 [32minfo[39m: Step 1: Initializing TradingView integration...
+2025-06-30 16:32:42 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T15:32:43.470Z] 2025-06-30 16:32:43 [31merror[39m: TradingView authentication failed:
+[2025-06-30T15:32:43.472Z] 2025-06-30 16:32:43 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T15:32:43.730Z] 2025-06-30 16:32:43 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T15:32:43.730Z] 2025-06-30 16:32:43 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+2025-06-30 16:32:43 [33mwarn[39m: Error getting signal for PLN:
+[2025-06-30T15:32:43.731Z] 2025-06-30 16:32:43 [32minfo[39m: Successfully fetched signals for 0 assets
+[2025-06-30T15:32:43.731Z] 2025-06-30 16:32:43 [32minfo[39m: ✅ TradingView integration initialized
+2025-06-30 16:32:43 [32minfo[39m: ✅ TradingView integration completed
+[2025-06-30T15:32:43.731Z] 2025-06-30 16:32:43 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T15:32:43.742Z] 2025-06-30 16:32:43 [32minfo[39m: ✅ Portfolio optimizer completed
+2025-06-30 16:32:43 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T15:32:43.915Z] 2025-06-30 16:32:43 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T15:32:44.618Z] 2025-06-30 16:32:44 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T15:32:44.792Z] 2025-06-30 16:32:44 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T15:32:45.040Z] 2025-06-30 16:32:45 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+2025-06-30 16:32:45 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+2025-06-30 16:32:45 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 16:32:45 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 16:32:45 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 16:32:45 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T15:32:45.091Z] 2025-06-30 16:32:45 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T15:32:45.131Z] 2025-06-30 16:32:45 [32minfo[39m: Pollen Contract Interface initialized
+2025-06-30 16:32:45 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T15:32:45.234Z] 2025-06-30 16:32:45 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T15:32:45.370Z] 2025-06-30 16:32:45 [32minfo[39m: Wallet AVAX balance: 0.024979380787562609
+[2025-06-30T15:32:45.493Z] 2025-06-30 16:32:45 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:32:45.494Z] 2025-06-30 16:32:45 [32minfo[39m: PLN balance: 0
+[2025-06-30T15:32:45.631Z] 2025-06-30 16:32:45 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:32:45.631Z] 2025-06-30 16:32:45 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T15:32:45.638Z] 2025-06-30 16:32:45 [32minfo[39m: Initializing Enhanced Trading Engine...
+[2025-06-30T15:32:45.639Z] 2025-06-30 16:32:45 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T15:32:45.640Z] 2025-06-30 16:32:45 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T15:32:45.645Z] 2025-06-30 16:32:45 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T15:32:46.445Z] 2025-06-30 16:32:46 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T15:32:49.452Z] 2025-06-30 16:32:49 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T15:32:49.455Z] 2025-06-30 16:32:49 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T15:32:49.655Z] 2025-06-30 16:32:49 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T15:32:52.663Z] 2025-06-30 16:32:52 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T15:33:10.376Z] 2025-06-30 16:33:10 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+2025-06-30 16:33:10 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T15:33:13.998Z] 2025-06-30 16:33:13 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T15:33:14.333Z] 2025-06-30 16:33:14 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:33:14.728Z] 2025-06-30 16:33:14 [32minfo[39m: Verification complete. Results:
+[2025-06-30T15:33:14.730Z] 2025-06-30 16:33:14 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:33:14.901Z] 2025-06-30 16:33:14 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:33:14.903Z] 2025-06-30 16:33:14 [32minfo[39m: Current PLN balance: 0
+[2025-06-30T15:33:14.904Z] 2025-06-30 16:33:14 [31merror[39m: Error initializing trading bot:
+[2025-06-30T15:33:14.905Z] 2025-06-30 16:33:14 [31merror[39m: Error initializing trading bot manager:
+2025-06-30 16:33:14 [31merror[39m: Full error details:
+[2025-06-30T15:33:14.905Z] 2025-06-30 16:33:14 [31merror[39m: Error in main:
+[2025-06-30T15:52:52.070Z] 2025-06-30 16:52:52 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T15:52:52.078Z] 2025-06-30 16:52:52 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 16:52:52 [32minfo[39m: Step 1: Initializing TradingView integration...
+2025-06-30 16:52:52 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T15:52:52.560Z] 2025-06-30 16:52:52 [31merror[39m: TradingView authentication failed:
+[2025-06-30T15:52:52.561Z] 2025-06-30 16:52:52 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T15:52:52.754Z] 2025-06-30 16:52:52 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T15:52:52.754Z] 2025-06-30 16:52:52 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+[2025-06-30T15:52:52.755Z] 2025-06-30 16:52:52 [33mwarn[39m: Error getting signal for PLN:
+[2025-06-30T15:52:52.755Z] 2025-06-30 16:52:52 [32minfo[39m: Successfully fetched signals for 0 assets
+[2025-06-30T15:52:52.755Z] 2025-06-30 16:52:52 [32minfo[39m: ✅ TradingView integration initialized
+[2025-06-30T15:52:52.755Z] 2025-06-30 16:52:52 [32minfo[39m: ✅ TradingView integration completed
+2025-06-30 16:52:52 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T15:52:52.755Z] 2025-06-30 16:52:52 [32minfo[39m: ✅ Portfolio optimizer completed
+2025-06-30 16:52:52 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T15:52:52.786Z] 2025-06-30 16:52:52 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T15:52:52.940Z] 2025-06-30 16:52:52 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T15:52:53.067Z] 2025-06-30 16:52:53 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T15:52:53.213Z] 2025-06-30 16:52:53 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T15:52:53.213Z] 2025-06-30 16:52:53 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+2025-06-30 16:52:53 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 16:52:53 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 16:52:53 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 16:52:53 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T15:52:53.213Z] 2025-06-30 16:52:53 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T15:52:53.214Z] 2025-06-30 16:52:53 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T15:52:53.215Z] 2025-06-30 16:52:53 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T15:52:53.324Z] 2025-06-30 16:52:53 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T15:52:53.451Z] 2025-06-30 16:52:53 [32minfo[39m: Wallet AVAX balance: 0.024979380787562609
+[2025-06-30T15:52:53.575Z] 2025-06-30 16:52:53 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:52:53.575Z] 2025-06-30 16:52:53 [32minfo[39m: PLN balance: 0
+[2025-06-30T15:52:53.700Z] 2025-06-30 16:52:53 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:52:53.700Z] 2025-06-30 16:52:53 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T15:52:53.701Z] 2025-06-30 16:52:53 [32minfo[39m: Initializing Enhanced Trading Engine...
+[2025-06-30T15:52:53.701Z] 2025-06-30 16:52:53 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T15:52:53.701Z] 2025-06-30 16:52:53 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T15:52:53.701Z] 2025-06-30 16:52:53 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T15:52:54.701Z] 2025-06-30 16:52:54 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T15:52:57.707Z] 2025-06-30 16:52:57 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T15:52:57.711Z] 2025-06-30 16:52:57 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T15:52:57.890Z] 2025-06-30 16:52:57 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T15:53:00.937Z] 2025-06-30 16:53:00 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T15:53:17.733Z] 2025-06-30 16:53:17 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+[2025-06-30T15:53:17.734Z] 2025-06-30 16:53:17 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T15:53:20.913Z] 2025-06-30 16:53:20 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T15:53:21.249Z] 2025-06-30 16:53:21 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:53:21.588Z] 2025-06-30 16:53:21 [32minfo[39m: Verification complete. Results:
+[2025-06-30T15:53:21.588Z] 2025-06-30 16:53:21 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:53:21.746Z] 2025-06-30 16:53:21 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:53:21.746Z] 2025-06-30 16:53:21 [32minfo[39m: Current PLN balance: 0
+2025-06-30 16:53:21 [31merror[39m: Error initializing trading bot:
+2025-06-30 16:53:21 [31merror[39m: Error initializing trading bot manager:
+[2025-06-30T15:53:21.746Z] 2025-06-30 16:53:21 [31merror[39m: Full error details:
+[2025-06-30T15:53:21.746Z] 2025-06-30 16:53:21 [31merror[39m: Error in main:
+[2025-06-30T15:53:27.449Z] 2025-06-30 16:53:27 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T15:53:27.450Z] 2025-06-30 16:53:27 [32minfo[39m: Initializing trading bot manager...
+[2025-06-30T15:53:27.450Z] 2025-06-30 16:53:27 [32minfo[39m: Step 1: Initializing TradingView integration...
+[2025-06-30T15:53:27.450Z] 2025-06-30 16:53:27 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T15:53:27.823Z] 2025-06-30 16:53:27 [31merror[39m: TradingView authentication failed:
+[2025-06-30T15:53:27.826Z] 2025-06-30 16:53:27 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T15:53:28.077Z] 2025-06-30 16:53:28 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T15:53:28.079Z] 2025-06-30 16:53:28 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+2025-06-30 16:53:28 [33mwarn[39m: Error getting signal for PLN:
+[2025-06-30T15:53:28.079Z] 2025-06-30 16:53:28 [32minfo[39m: Successfully fetched signals for 0 assets
+2025-06-30 16:53:28 [32minfo[39m: ✅ TradingView integration initialized
+2025-06-30 16:53:28 [32minfo[39m: ✅ TradingView integration completed
+2025-06-30 16:53:28 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T15:53:28.080Z] 2025-06-30 16:53:28 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T15:53:28.081Z] 2025-06-30 16:53:28 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T15:53:28.208Z] 2025-06-30 16:53:28 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T15:53:28.743Z] 2025-06-30 16:53:28 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T15:53:28.865Z] 2025-06-30 16:53:28 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T15:53:29.005Z] 2025-06-30 16:53:29 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T15:53:29.005Z] 2025-06-30 16:53:29 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+2025-06-30 16:53:29 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 16:53:29 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 16:53:29 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 16:53:29 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T15:53:29.006Z] 2025-06-30 16:53:29 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T15:53:29.010Z] 2025-06-30 16:53:29 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T15:53:29.010Z] 2025-06-30 16:53:29 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T15:53:29.125Z] 2025-06-30 16:53:29 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T15:53:29.250Z] 2025-06-30 16:53:29 [32minfo[39m: Wallet AVAX balance: 0.024979380787562609
+[2025-06-30T15:53:29.382Z] 2025-06-30 16:53:29 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:53:29.383Z] 2025-06-30 16:53:29 [32minfo[39m: PLN balance: 0
+[2025-06-30T15:53:29.512Z] 2025-06-30 16:53:29 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+2025-06-30 16:53:29 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T15:53:29.513Z] 2025-06-30 16:53:29 [32minfo[39m: Initializing Enhanced Trading Engine...
+[2025-06-30T15:53:29.514Z] 2025-06-30 16:53:29 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T15:53:29.514Z] 2025-06-30 16:53:29 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T15:53:29.514Z] 2025-06-30 16:53:29 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T15:53:30.151Z] 2025-06-30 16:53:30 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T15:53:33.155Z] 2025-06-30 16:53:33 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T15:53:33.157Z] 2025-06-30 16:53:33 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T15:53:33.326Z] 2025-06-30 16:53:33 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T15:53:36.330Z] 2025-06-30 16:53:36 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T15:53:55.562Z] 2025-06-30 16:53:55 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+[2025-06-30T15:53:55.564Z] 2025-06-30 16:53:55 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T15:54:01.053Z] 2025-06-30 16:54:01 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T15:54:01.512Z] 2025-06-30 16:54:01 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:54:01.858Z] 2025-06-30 16:54:01 [32minfo[39m: Verification complete. Results:
+[2025-06-30T15:54:01.858Z] 2025-06-30 16:54:01 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:54:02.068Z] 2025-06-30 16:54:02 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:54:02.069Z] 2025-06-30 16:54:02 [32minfo[39m: Current PLN balance: 0
+2025-06-30 16:54:02 [31merror[39m: Error initializing trading bot:
+2025-06-30 16:54:02 [31merror[39m: Error initializing trading bot manager:
+2025-06-30 16:54:02 [31merror[39m: Full error details:
+2025-06-30 16:54:02 [31merror[39m: Error in main:
+[2025-06-30T15:54:08.742Z] 2025-06-30 16:54:08 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T15:54:08.742Z] 2025-06-30 16:54:08 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 16:54:08 [32minfo[39m: Step 1: Initializing TradingView integration...
+[2025-06-30T15:54:08.743Z] 2025-06-30 16:54:08 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T15:54:09.042Z] 2025-06-30 16:54:09 [31merror[39m: TradingView authentication failed:
+[2025-06-30T15:54:09.043Z] 2025-06-30 16:54:09 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T15:54:09.196Z] 2025-06-30 16:54:09 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T15:54:09.196Z] 2025-06-30 16:54:09 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+[2025-06-30T15:54:09.197Z] 2025-06-30 16:54:09 [33mwarn[39m: Error getting signal for PLN:
+[2025-06-30T15:54:09.197Z] 2025-06-30 16:54:09 [32minfo[39m: Successfully fetched signals for 0 assets
+[2025-06-30T15:54:09.197Z] 2025-06-30 16:54:09 [32minfo[39m: ✅ TradingView integration initialized
+2025-06-30 16:54:09 [32minfo[39m: ✅ TradingView integration completed
+[2025-06-30T15:54:09.198Z] 2025-06-30 16:54:09 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T15:54:09.198Z] 2025-06-30 16:54:09 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T15:54:09.198Z] 2025-06-30 16:54:09 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T15:54:09.254Z] 2025-06-30 16:54:09 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T15:54:09.510Z] 2025-06-30 16:54:09 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T15:54:09.633Z] 2025-06-30 16:54:09 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T15:54:09.768Z] 2025-06-30 16:54:09 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T15:54:09.768Z] 2025-06-30 16:54:09 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+2025-06-30 16:54:09 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 16:54:09 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 16:54:09 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 16:54:09 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T15:54:09.768Z] 2025-06-30 16:54:09 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T15:54:09.771Z] 2025-06-30 16:54:09 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T15:54:09.771Z] 2025-06-30 16:54:09 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T15:54:09.878Z] 2025-06-30 16:54:09 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T15:54:10.010Z] 2025-06-30 16:54:10 [32minfo[39m: Wallet AVAX balance: 0.024979380787562609
+[2025-06-30T15:54:10.152Z] 2025-06-30 16:54:10 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+2025-06-30 16:54:10 [32minfo[39m: PLN balance: 0
+[2025-06-30T15:54:10.290Z] 2025-06-30 16:54:10 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:54:10.291Z] 2025-06-30 16:54:10 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T15:54:10.292Z] 2025-06-30 16:54:10 [32minfo[39m: Initializing Enhanced Trading Engine...
+[2025-06-30T15:54:10.293Z] 2025-06-30 16:54:10 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T15:54:10.294Z] 2025-06-30 16:54:10 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T15:54:10.294Z] 2025-06-30 16:54:10 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T15:54:11.027Z] 2025-06-30 16:54:11 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T15:54:14.028Z] 2025-06-30 16:54:14 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T15:54:14.029Z] 2025-06-30 16:54:14 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T15:54:14.202Z] 2025-06-30 16:54:14 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T15:54:17.204Z] 2025-06-30 16:54:17 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T15:54:34.165Z] 2025-06-30 16:54:34 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+2025-06-30 16:54:34 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T15:54:37.202Z] 2025-06-30 16:54:37 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T15:54:37.556Z] 2025-06-30 16:54:37 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:54:37.893Z] 2025-06-30 16:54:37 [32minfo[39m: Verification complete. Results:
+[2025-06-30T15:54:37.893Z] 2025-06-30 16:54:37 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:54:38.036Z] 2025-06-30 16:54:38 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:54:38.036Z] 2025-06-30 16:54:38 [32minfo[39m: Current PLN balance: 0
+2025-06-30 16:54:38 [31merror[39m: Error initializing trading bot:
+2025-06-30 16:54:38 [31merror[39m: Error initializing trading bot manager:
+2025-06-30 16:54:38 [31merror[39m: Full error details:
+2025-06-30 16:54:38 [31merror[39m: Error in main:
+[2025-06-30T15:54:44.071Z] 2025-06-30 16:54:44 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T15:54:44.072Z] 2025-06-30 16:54:44 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 16:54:44 [32minfo[39m: Step 1: Initializing TradingView integration...
+2025-06-30 16:54:44 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T15:54:44.508Z] 2025-06-30 16:54:44 [31merror[39m: TradingView authentication failed:
+[2025-06-30T15:54:44.509Z] 2025-06-30 16:54:44 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T15:54:44.670Z] 2025-06-30 16:54:44 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T15:54:44.670Z] 2025-06-30 16:54:44 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+[2025-06-30T15:54:44.671Z] 2025-06-30 16:54:44 [33mwarn[39m: Error getting signal for PLN:
+[2025-06-30T15:54:44.671Z] 2025-06-30 16:54:44 [32minfo[39m: Successfully fetched signals for 0 assets
+[2025-06-30T15:54:44.672Z] 2025-06-30 16:54:44 [32minfo[39m: ✅ TradingView integration initialized
+[2025-06-30T15:54:44.672Z] 2025-06-30 16:54:44 [32minfo[39m: ✅ TradingView integration completed
+2025-06-30 16:54:44 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T15:54:44.674Z] 2025-06-30 16:54:44 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T15:54:44.675Z] 2025-06-30 16:54:44 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T15:54:44.747Z] 2025-06-30 16:54:44 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T15:54:45.061Z] 2025-06-30 16:54:45 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T15:54:45.184Z] 2025-06-30 16:54:45 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T15:54:45.319Z] 2025-06-30 16:54:45 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T15:54:45.319Z] 2025-06-30 16:54:45 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+2025-06-30 16:54:45 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 16:54:45 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+[2025-06-30T15:54:45.319Z] 2025-06-30 16:54:45 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 16:54:45 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T15:54:45.320Z] 2025-06-30 16:54:45 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T15:54:45.322Z] 2025-06-30 16:54:45 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T15:54:45.322Z] 2025-06-30 16:54:45 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T15:54:45.431Z] 2025-06-30 16:54:45 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T15:54:45.575Z] 2025-06-30 16:54:45 [32minfo[39m: Wallet AVAX balance: 0.024979380787562609
+[2025-06-30T15:54:45.706Z] 2025-06-30 16:54:45 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:54:45.707Z] 2025-06-30 16:54:45 [32minfo[39m: PLN balance: 0
+[2025-06-30T15:54:45.847Z] 2025-06-30 16:54:45 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:54:45.847Z] 2025-06-30 16:54:45 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T15:54:45.848Z] 2025-06-30 16:54:45 [32minfo[39m: Initializing Enhanced Trading Engine...
+[2025-06-30T15:54:45.848Z] 2025-06-30 16:54:45 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T15:54:45.848Z] 2025-06-30 16:54:45 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T15:54:45.849Z] 2025-06-30 16:54:45 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T15:54:46.442Z] 2025-06-30 16:54:46 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T15:54:49.451Z] 2025-06-30 16:54:49 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T15:54:49.452Z] 2025-06-30 16:54:49 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T15:54:49.623Z] 2025-06-30 16:54:49 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T15:54:52.633Z] 2025-06-30 16:54:52 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T15:55:09.670Z] 2025-06-30 16:55:09 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+[2025-06-30T15:55:09.671Z] 2025-06-30 16:55:09 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T15:55:13.454Z] 2025-06-30 16:55:13 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T15:55:13.799Z] 2025-06-30 16:55:13 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:55:14.126Z] 2025-06-30 16:55:14 [32minfo[39m: Verification complete. Results:
+[2025-06-30T15:55:14.126Z] 2025-06-30 16:55:14 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T15:55:14.287Z] 2025-06-30 16:55:14 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T15:55:14.287Z] 2025-06-30 16:55:14 [32minfo[39m: Current PLN balance: 0
+2025-06-30 16:55:14 [31merror[39m: Error initializing trading bot:
+[2025-06-30T15:55:14.288Z] 2025-06-30 16:55:14 [31merror[39m: Error initializing trading bot manager:
+[2025-06-30T15:55:14.288Z] 2025-06-30 16:55:14 [31merror[39m: Full error details:
+[2025-06-30T15:55:14.288Z] 2025-06-30 16:55:14 [31merror[39m: Error in main:
+[2025-06-30T16:14:12.284Z] 2025-06-30 17:14:12 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T16:14:12.285Z] 2025-06-30 17:14:12 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 17:14:12 [32minfo[39m: Step 1: Initializing TradingView integration...
+2025-06-30 17:14:12 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T16:14:12.781Z] 2025-06-30 17:14:12 [31merror[39m: TradingView authentication failed:
+[2025-06-30T16:14:12.782Z] 2025-06-30 17:14:12 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T16:14:12.950Z] 2025-06-30 17:14:12 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T16:14:12.950Z] 2025-06-30 17:14:12 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+2025-06-30 17:14:12 [33mwarn[39m: Error getting signal for PLN:
+[2025-06-30T16:14:12.951Z] 2025-06-30 17:14:12 [32minfo[39m: Successfully fetched signals for 0 assets
+2025-06-30 17:14:12 [32minfo[39m: ✅ TradingView integration initialized
+[2025-06-30T16:14:12.951Z] 2025-06-30 17:14:12 [32minfo[39m: ✅ TradingView integration completed
+2025-06-30 17:14:12 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T16:14:12.951Z] 2025-06-30 17:14:12 [32minfo[39m: ✅ Portfolio optimizer completed
+2025-06-30 17:14:12 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T16:14:12.978Z] 2025-06-30 17:14:12 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T16:14:13.171Z] 2025-06-30 17:14:13 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T16:14:13.296Z] 2025-06-30 17:14:13 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T16:14:13.441Z] 2025-06-30 17:14:13 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T16:14:13.441Z] 2025-06-30 17:14:13 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+2025-06-30 17:14:13 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 17:14:13 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 17:14:13 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 17:14:13 [32minfo[39m: Step 4: Initializing main trading bot...
+2025-06-30 17:14:13 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T16:14:13.443Z] 2025-06-30 17:14:13 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T16:14:13.443Z] 2025-06-30 17:14:13 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T16:14:13.564Z] 2025-06-30 17:14:13 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T16:14:13.699Z] 2025-06-30 17:14:13 [32minfo[39m: Wallet AVAX balance: 0.02497922690710326
+[2025-06-30T16:14:13.930Z] 2025-06-30 17:14:13 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:14:13.930Z] 2025-06-30 17:14:13 [32minfo[39m: PLN balance: 0
+[2025-06-30T16:14:14.169Z] 2025-06-30 17:14:14 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+2025-06-30 17:14:14 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T16:14:14.171Z] 2025-06-30 17:14:14 [32minfo[39m: Initializing Enhanced Trading Engine...
+[2025-06-30T16:14:14.172Z] 2025-06-30 17:14:14 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T16:14:14.190Z] 2025-06-30 17:14:14 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T16:14:14.191Z] 2025-06-30 17:14:14 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T16:14:15.260Z] 2025-06-30 17:14:15 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T16:14:18.263Z] 2025-06-30 17:14:18 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T16:14:18.264Z] 2025-06-30 17:14:18 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T16:14:18.454Z] 2025-06-30 17:14:18 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T16:14:21.458Z] 2025-06-30 17:14:21 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T16:14:38.857Z] 2025-06-30 17:14:38 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+[2025-06-30T16:14:38.860Z] 2025-06-30 17:14:38 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T16:14:43.577Z] 2025-06-30 17:14:43 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T16:14:43.938Z] 2025-06-30 17:14:43 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:14:44.285Z] 2025-06-30 17:14:44 [32minfo[39m: Verification complete. Results:
+[2025-06-30T16:14:44.285Z] 2025-06-30 17:14:44 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:14:44.450Z] 2025-06-30 17:14:44 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:14:44.451Z] 2025-06-30 17:14:44 [32minfo[39m: Current PLN balance: 0
+2025-06-30 17:14:44 [31merror[39m: Error initializing trading bot:
+[2025-06-30T16:14:44.451Z] 2025-06-30 17:14:44 [31merror[39m: Error initializing trading bot manager:
+[2025-06-30T16:14:44.451Z] 2025-06-30 17:14:44 [31merror[39m: Full error details:
+2025-06-30 17:14:44 [31merror[39m: Error in main:
+[2025-06-30T16:14:50.445Z] 2025-06-30 17:14:50 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T16:14:50.446Z] 2025-06-30 17:14:50 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 17:14:50 [32minfo[39m: Step 1: Initializing TradingView integration...
+2025-06-30 17:14:50 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T16:14:50.730Z] 2025-06-30 17:14:50 [31merror[39m: TradingView authentication failed:
+[2025-06-30T16:14:50.735Z] 2025-06-30 17:14:50 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T16:14:50.948Z] 2025-06-30 17:14:50 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T16:14:50.948Z] 2025-06-30 17:14:50 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+[2025-06-30T16:14:50.948Z] 2025-06-30 17:14:50 [33mwarn[39m: Error getting signal for PLN:
+[2025-06-30T16:14:50.948Z] 2025-06-30 17:14:50 [32minfo[39m: Successfully fetched signals for 0 assets
+[2025-06-30T16:14:50.948Z] 2025-06-30 17:14:50 [32minfo[39m: ✅ TradingView integration initialized
+2025-06-30 17:14:50 [32minfo[39m: ✅ TradingView integration completed
+[2025-06-30T16:14:50.948Z] 2025-06-30 17:14:50 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T16:14:50.949Z] 2025-06-30 17:14:50 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T16:14:50.949Z] 2025-06-30 17:14:50 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T16:14:50.977Z] 2025-06-30 17:14:50 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T16:14:51.160Z] 2025-06-30 17:14:51 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T16:14:51.345Z] 2025-06-30 17:14:51 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T16:14:51.508Z] 2025-06-30 17:14:51 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T16:14:51.509Z] 2025-06-30 17:14:51 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+[2025-06-30T16:14:51.509Z] 2025-06-30 17:14:51 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 17:14:51 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 17:14:51 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 17:14:51 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T16:14:51.509Z] 2025-06-30 17:14:51 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T16:14:51.511Z] 2025-06-30 17:14:51 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T16:14:51.511Z] 2025-06-30 17:14:51 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T16:14:51.625Z] 2025-06-30 17:14:51 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T16:14:51.762Z] 2025-06-30 17:14:51 [32minfo[39m: Wallet AVAX balance: 0.02497922690710326
+[2025-06-30T16:14:51.900Z] 2025-06-30 17:14:51 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:14:51.900Z] 2025-06-30 17:14:51 [32minfo[39m: PLN balance: 0
+[2025-06-30T16:14:52.112Z] 2025-06-30 17:14:52 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:14:52.113Z] 2025-06-30 17:14:52 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+2025-06-30 17:14:52 [32minfo[39m: Initializing Enhanced Trading Engine...
+2025-06-30 17:14:52 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T16:14:52.113Z] 2025-06-30 17:14:52 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T16:14:52.113Z] 2025-06-30 17:14:52 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T16:14:52.710Z] 2025-06-30 17:14:52 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T16:14:55.716Z] 2025-06-30 17:14:55 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T16:14:55.717Z] 2025-06-30 17:14:55 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T16:14:55.918Z] 2025-06-30 17:14:55 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T16:14:58.923Z] 2025-06-30 17:14:58 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T16:15:16.489Z] 2025-06-30 17:15:16 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+[2025-06-30T16:15:16.490Z] 2025-06-30 17:15:16 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T16:15:19.175Z] 2025-06-30 17:15:19 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T16:15:19.496Z] 2025-06-30 17:15:19 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:15:19.827Z] 2025-06-30 17:15:19 [32minfo[39m: Verification complete. Results:
+[2025-06-30T16:15:19.827Z] 2025-06-30 17:15:19 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:15:19.986Z] 2025-06-30 17:15:19 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:15:19.986Z] 2025-06-30 17:15:19 [32minfo[39m: Current PLN balance: 0
+2025-06-30 17:15:19 [31merror[39m: Error initializing trading bot:
+[2025-06-30T16:15:19.986Z] 2025-06-30 17:15:19 [31merror[39m: Error initializing trading bot manager:
+[2025-06-30T16:15:19.986Z] 2025-06-30 17:15:19 [31merror[39m: Full error details:
+2025-06-30 17:15:19 [31merror[39m: Error in main:
+[2025-06-30T16:15:25.743Z] 2025-06-30 17:15:25 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T16:15:25.743Z] 2025-06-30 17:15:25 [32minfo[39m: Initializing trading bot manager...
+[2025-06-30T16:15:25.743Z] 2025-06-30 17:15:25 [32minfo[39m: Step 1: Initializing TradingView integration...
+[2025-06-30T16:15:25.743Z] 2025-06-30 17:15:25 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T16:15:26.151Z] 2025-06-30 17:15:26 [31merror[39m: TradingView authentication failed:
+[2025-06-30T16:15:26.151Z] 2025-06-30 17:15:26 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T16:15:26.513Z] 2025-06-30 17:15:26 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T16:15:26.514Z] 2025-06-30 17:15:26 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+[2025-06-30T16:15:26.514Z] 2025-06-30 17:15:26 [33mwarn[39m: Error getting signal for PLN:
+[2025-06-30T16:15:26.514Z] 2025-06-30 17:15:26 [32minfo[39m: Successfully fetched signals for 0 assets
+[2025-06-30T16:15:26.514Z] 2025-06-30 17:15:26 [32minfo[39m: ✅ TradingView integration initialized
+2025-06-30 17:15:26 [32minfo[39m: ✅ TradingView integration completed
+[2025-06-30T16:15:26.514Z] 2025-06-30 17:15:26 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T16:15:26.514Z] 2025-06-30 17:15:26 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T16:15:26.514Z] 2025-06-30 17:15:26 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T16:15:26.544Z] 2025-06-30 17:15:26 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T16:15:26.696Z] 2025-06-30 17:15:26 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T16:15:26.828Z] 2025-06-30 17:15:26 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T16:15:26.959Z] 2025-06-30 17:15:26 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T16:15:26.959Z] 2025-06-30 17:15:26 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+2025-06-30 17:15:26 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 17:15:26 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 17:15:26 [32minfo[39m: ✅ Pollen Virtual Contract completed
+[2025-06-30T16:15:26.959Z] 2025-06-30 17:15:26 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T16:15:26.960Z] 2025-06-30 17:15:26 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T16:15:26.961Z] 2025-06-30 17:15:26 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T16:15:26.961Z] 2025-06-30 17:15:26 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T16:15:27.075Z] 2025-06-30 17:15:27 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T16:15:27.198Z] 2025-06-30 17:15:27 [32minfo[39m: Wallet AVAX balance: 0.02497922690710326
+[2025-06-30T16:15:27.319Z] 2025-06-30 17:15:27 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:15:27.320Z] 2025-06-30 17:15:27 [32minfo[39m: PLN balance: 0
+[2025-06-30T16:15:27.461Z] 2025-06-30 17:15:27 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+2025-06-30 17:15:27 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T16:15:27.461Z] 2025-06-30 17:15:27 [32minfo[39m: Initializing Enhanced Trading Engine...
+2025-06-30 17:15:27 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T16:15:27.461Z] 2025-06-30 17:15:27 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T16:15:27.461Z] 2025-06-30 17:15:27 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T16:15:28.085Z] 2025-06-30 17:15:28 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T16:15:31.089Z] 2025-06-30 17:15:31 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T16:15:31.090Z] 2025-06-30 17:15:31 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T16:15:31.282Z] 2025-06-30 17:15:31 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T16:15:34.292Z] 2025-06-30 17:15:34 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T16:15:51.441Z] 2025-06-30 17:15:51 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+[2025-06-30T16:15:51.443Z] 2025-06-30 17:15:51 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T16:15:55.932Z] 2025-06-30 17:15:55 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T16:15:56.345Z] 2025-06-30 17:15:56 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:15:56.663Z] 2025-06-30 17:15:56 [32minfo[39m: Verification complete. Results:
+[2025-06-30T16:15:56.664Z] 2025-06-30 17:15:56 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:15:56.826Z] 2025-06-30 17:15:56 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:15:56.827Z] 2025-06-30 17:15:56 [32minfo[39m: Current PLN balance: 0
+2025-06-30 17:15:56 [31merror[39m: Error initializing trading bot:
+2025-06-30 17:15:56 [31merror[39m: Error initializing trading bot manager:
+[2025-06-30T16:15:56.827Z] 2025-06-30 17:15:56 [31merror[39m: Full error details:
+[2025-06-30T16:15:56.827Z] 2025-06-30 17:15:56 [31merror[39m: Error in main:
+[2025-06-30T16:16:02.981Z] 2025-06-30 17:16:02 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T16:16:02.982Z] 2025-06-30 17:16:02 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 17:16:02 [32minfo[39m: Step 1: Initializing TradingView integration...
+2025-06-30 17:16:02 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T16:16:03.268Z] 2025-06-30 17:16:03 [31merror[39m: TradingView authentication failed:
+[2025-06-30T16:16:03.269Z] 2025-06-30 17:16:03 [33mwarn[39m: TradingView authentication failed, using public API:
+[2025-06-30T16:16:03.437Z] 2025-06-30 17:16:03 [31merror[39m: Error getting technical indicators: Request failed with status code 404
+[2025-06-30T16:16:03.437Z] 2025-06-30 17:16:03 [31merror[39m: Error getting signal for PLN: Request failed with status code 404
+[2025-06-30T16:16:03.443Z] 2025-06-30 17:16:03 [33mwarn[39m: Error getting signal for PLN:
+2025-06-30 17:16:03 [32minfo[39m: Successfully fetched signals for 0 assets
+2025-06-30 17:16:03 [32minfo[39m: ✅ TradingView integration initialized
+2025-06-30 17:16:03 [32minfo[39m: ✅ TradingView integration completed
+2025-06-30 17:16:03 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+2025-06-30 17:16:03 [32minfo[39m: ✅ Portfolio optimizer completed
+2025-06-30 17:16:03 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T16:16:03.511Z] 2025-06-30 17:16:03 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T16:16:03.724Z] 2025-06-30 17:16:03 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T16:16:03.871Z] 2025-06-30 17:16:03 [33mwarn[39m: PLN token address has no code - using fallback mode
+[2025-06-30T16:16:04.005Z] 2025-06-30 17:16:04 [33mwarn[39m: Could not fetch PLN balance, continuing anyway:
+[2025-06-30T16:16:04.005Z] 2025-06-30 17:16:04 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+2025-06-30 17:16:04 [32minfo[39m: PLN Balance: Unable to fetch (simulation mode)
+2025-06-30 17:16:04 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 17:16:04 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 17:16:04 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T16:16:04.005Z] 2025-06-30 17:16:04 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T16:16:04.007Z] 2025-06-30 17:16:04 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T16:16:04.007Z] 2025-06-30 17:16:04 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T16:16:04.120Z] 2025-06-30 17:16:04 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T16:16:04.255Z] 2025-06-30 17:16:04 [32minfo[39m: Wallet AVAX balance: 0.02497922690710326
+[2025-06-30T16:16:04.418Z] 2025-06-30 17:16:04 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:16:04.418Z] 2025-06-30 17:16:04 [32minfo[39m: PLN balance: 0
+[2025-06-30T16:16:04.564Z] 2025-06-30 17:16:04 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:16:04.564Z] 2025-06-30 17:16:04 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T16:16:04.564Z] 2025-06-30 17:16:04 [32minfo[39m: Initializing Enhanced Trading Engine...
+2025-06-30 17:16:04 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T16:16:04.565Z] 2025-06-30 17:16:04 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T16:16:04.565Z] 2025-06-30 17:16:04 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T16:16:05.344Z] 2025-06-30 17:16:05 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T16:16:08.349Z] 2025-06-30 17:16:08 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T16:16:08.350Z] 2025-06-30 17:16:08 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T16:16:08.518Z] 2025-06-30 17:16:08 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T16:16:11.525Z] 2025-06-30 17:16:11 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T16:16:30.053Z] 2025-06-30 17:16:30 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+2025-06-30 17:16:30 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T16:16:33.142Z] 2025-06-30 17:16:33 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T16:16:33.486Z] 2025-06-30 17:16:33 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:16:33.826Z] 2025-06-30 17:16:33 [32minfo[39m: Verification complete. Results:
+2025-06-30 17:16:33 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:16:34.037Z] 2025-06-30 17:16:34 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:16:34.038Z] 2025-06-30 17:16:34 [32minfo[39m: Current PLN balance: 0
+2025-06-30 17:16:34 [31merror[39m: Error initializing trading bot:
+2025-06-30 17:16:34 [31merror[39m: Error initializing trading bot manager:
+2025-06-30 17:16:34 [31merror[39m: Full error details:
+2025-06-30 17:16:34 [31merror[39m: Error in main:
+[2025-06-30T16:17:28.319Z] [ERROR] /Users/apple/Downloads/Pods/src/config.js:21
+  contracts: {
+  ^^^^^^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module._compile (node:internal/modules/cjs/loader:1528:20)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (/Users/apple/Downloads/Pods/src/index.js:30:16)
+
+Node.js v22.14.0
+[2025-06-30T16:17:34.210Z] [ERROR] /Users/apple/Downloads/Pods/src/config.js:21
+  contracts: {
+  ^^^^^^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module._compile (node:internal/modules/cjs/loader:1528:20)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (/Users/apple/Downloads/Pods/src/index.js:30:16)
+
+Node.js v22.14.0
+[2025-06-30T16:17:40.433Z] [ERROR] /Users/apple/Downloads/Pods/src/config.js:21
+  contracts: {
+  ^^^^^^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module._compile (node:internal/modules/cjs/loader:1528:20)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (/Users/apple/Downloads/Pods/src/index.js:30:16)
+
+Node.js v22.14.0
+[2025-06-30T16:17:48.053Z] [ERROR] /Users/apple/Downloads/Pods/src/config.js:21
+  contracts: {
+  ^^^^^^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module._compile (node:internal/modules/cjs/loader:1528:20)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (/Users/apple/Downloads/Pods/src/index.js:30:16)
+
+Node.js v22.14.0
+[2025-06-30T16:22:57.204Z] 2025-06-30 17:22:57 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T16:22:57.205Z] 2025-06-30 17:22:57 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 17:22:57 [32minfo[39m: Step 1: Initializing TradingView integration...
+[2025-06-30T16:22:57.205Z] 2025-06-30 17:22:57 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T16:22:57.205Z] 2025-06-30 17:22:57 [31merror[39m: Error initializing TradingView integration:
+[2025-06-30T16:22:57.206Z] 2025-06-30 17:22:57 [33mwarn[39m: Continuing without TradingView integration
+[2025-06-30T16:22:57.206Z] 2025-06-30 17:22:57 [32minfo[39m: ✅ TradingView integration completed
+[2025-06-30T16:22:57.206Z] 2025-06-30 17:22:57 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T16:22:57.207Z] 2025-06-30 17:22:57 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T16:22:57.207Z] 2025-06-30 17:22:57 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T16:22:57.232Z] 2025-06-30 17:22:57 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T16:22:57.475Z] 2025-06-30 17:22:57 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T16:22:57.609Z] 2025-06-30 17:22:57 [32minfo[39m: ✅ PLN token contract verified
+[2025-06-30T16:22:57.767Z] 2025-06-30 17:22:57 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+[2025-06-30T16:22:57.767Z] 2025-06-30 17:22:57 [32minfo[39m: PLN Balance: 49.0
+[2025-06-30T16:22:57.767Z] 2025-06-30 17:22:57 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+[2025-06-30T16:22:57.767Z] 2025-06-30 17:22:57 [32minfo[39m: ✅ Pollen Virtual Contract completed
+[2025-06-30T16:22:57.767Z] 2025-06-30 17:22:57 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T16:22:57.767Z] 2025-06-30 17:22:57 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T16:22:57.778Z] 2025-06-30 17:22:57 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T16:22:57.779Z] 2025-06-30 17:22:57 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T16:22:57.900Z] 2025-06-30 17:22:57 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T16:22:58.022Z] 2025-06-30 17:22:58 [32minfo[39m: Wallet AVAX balance: 0.02497922690710326
+[2025-06-30T16:22:58.152Z] 2025-06-30 17:22:58 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:22:58.152Z] 2025-06-30 17:22:58 [32minfo[39m: PLN balance: 0
+[2025-06-30T16:22:58.280Z] 2025-06-30 17:22:58 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+2025-06-30 17:22:58 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T16:22:58.280Z] 2025-06-30 17:22:58 [32minfo[39m: Initializing Enhanced Trading Engine...
+[2025-06-30T16:22:58.280Z] 2025-06-30 17:22:58 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T16:22:58.280Z] 2025-06-30 17:22:58 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T16:22:58.280Z] 2025-06-30 17:22:58 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T16:22:59.233Z] 2025-06-30 17:22:59 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T16:23:02.239Z] 2025-06-30 17:23:02 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T16:23:02.240Z] 2025-06-30 17:23:02 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T16:23:02.419Z] 2025-06-30 17:23:02 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T16:23:05.465Z] 2025-06-30 17:23:05 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T16:23:24.984Z] 2025-06-30 17:23:24 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+2025-06-30 17:23:24 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T16:23:29.542Z] 2025-06-30 17:23:29 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T16:23:29.885Z] 2025-06-30 17:23:29 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:23:30.220Z] 2025-06-30 17:23:30 [32minfo[39m: Verification complete. Results:
+[2025-06-30T16:23:30.220Z] 2025-06-30 17:23:30 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:23:30.366Z] 2025-06-30 17:23:30 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:23:30.366Z] 2025-06-30 17:23:30 [32minfo[39m: Current PLN balance: 0
+2025-06-30 17:23:30 [31merror[39m: Error initializing trading bot:
+[2025-06-30T16:23:30.366Z] 2025-06-30 17:23:30 [31merror[39m: Error initializing trading bot manager:
+2025-06-30 17:23:30 [31merror[39m: Full error details:
+2025-06-30 17:23:30 [31merror[39m: Error in main:
+[2025-06-30T16:23:38.340Z] 2025-06-30 17:23:38 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T16:23:38.450Z] 2025-06-30 17:23:38 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 17:23:38 [32minfo[39m: Step 1: Initializing TradingView integration...
+2025-06-30 17:23:38 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T16:23:38.756Z] 2025-06-30 17:23:38 [31merror[39m: Error initializing TradingView integration:
+[2025-06-30T16:23:38.757Z] 2025-06-30 17:23:38 [33mwarn[39m: Continuing without TradingView integration
+[2025-06-30T16:23:38.778Z] 2025-06-30 17:23:38 [32minfo[39m: ✅ TradingView integration completed
+[2025-06-30T16:23:38.799Z] 2025-06-30 17:23:38 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T16:23:39.051Z] 2025-06-30 17:23:38 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T16:23:39.162Z] 2025-06-30 17:23:39 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T16:23:40.366Z] 2025-06-30 17:23:40 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T16:23:40.871Z] 2025-06-30 17:23:40 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T16:23:41.006Z] 2025-06-30 17:23:41 [32minfo[39m: ✅ PLN token contract verified
+[2025-06-30T16:23:41.154Z] 2025-06-30 17:23:41 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+[2025-06-30T16:23:41.155Z] 2025-06-30 17:23:41 [32minfo[39m: PLN Balance: 49.0
+[2025-06-30T16:23:41.155Z] 2025-06-30 17:23:41 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+[2025-06-30T16:23:41.155Z] 2025-06-30 17:23:41 [32minfo[39m: ✅ Pollen Virtual Contract completed
+[2025-06-30T16:23:41.155Z] 2025-06-30 17:23:41 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T16:23:41.156Z] 2025-06-30 17:23:41 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T16:23:41.209Z] 2025-06-30 17:23:41 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T16:23:41.217Z] 2025-06-30 17:23:41 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T16:23:41.327Z] 2025-06-30 17:23:41 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T16:23:41.458Z] 2025-06-30 17:23:41 [32minfo[39m: Wallet AVAX balance: 0.02497922690710326
+[2025-06-30T16:23:41.927Z] 2025-06-30 17:23:41 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:23:41.947Z] 2025-06-30 17:23:41 [32minfo[39m: PLN balance: 0
+[2025-06-30T16:23:42.101Z] 2025-06-30 17:23:42 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:23:42.101Z] 2025-06-30 17:23:42 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T16:23:42.103Z] 2025-06-30 17:23:42 [32minfo[39m: Initializing Enhanced Trading Engine...
+2025-06-30 17:23:42 [32minfo[39m: Starting Pollen contract verification...
+2025-06-30 17:23:42 [32minfo[39m: Starting PLN token verification...
+2025-06-30 17:23:42 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T16:23:42.782Z] 2025-06-30 17:23:42 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T16:23:45.793Z] 2025-06-30 17:23:45 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T16:23:45.796Z] 2025-06-30 17:23:45 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T16:23:45.973Z] 2025-06-30 17:23:45 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T16:23:48.978Z] 2025-06-30 17:23:48 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T16:24:07.626Z] 2025-06-30 17:24:07 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+[2025-06-30T16:24:07.628Z] 2025-06-30 17:24:07 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T16:24:11.218Z] 2025-06-30 17:24:11 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T16:24:11.479Z] 2025-06-30 17:24:11 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:24:11.976Z] 2025-06-30 17:24:11 [32minfo[39m: Verification complete. Results:
+[2025-06-30T16:24:11.984Z] 2025-06-30 17:24:11 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:24:12.234Z] 2025-06-30 17:24:12 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:24:12.237Z] 2025-06-30 17:24:12 [32minfo[39m: Current PLN balance: 0
+[2025-06-30T16:24:12.237Z] 2025-06-30 17:24:12 [31merror[39m: Error initializing trading bot:
+2025-06-30 17:24:12 [31merror[39m: Error initializing trading bot manager:
+2025-06-30 17:24:12 [31merror[39m: Full error details:
+2025-06-30 17:24:12 [31merror[39m: Error in main:
+[2025-06-30T16:24:21.761Z] 2025-06-30 17:24:21 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T16:24:21.765Z] 2025-06-30 17:24:21 [32minfo[39m: Initializing trading bot manager...
+2025-06-30 17:24:21 [32minfo[39m: Step 1: Initializing TradingView integration...
+2025-06-30 17:24:21 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T16:24:21.766Z] 2025-06-30 17:24:21 [31merror[39m: Error initializing TradingView integration:
+[2025-06-30T16:24:21.767Z] 2025-06-30 17:24:21 [33mwarn[39m: Continuing without TradingView integration
+[2025-06-30T16:24:21.768Z] 2025-06-30 17:24:21 [32minfo[39m: ✅ TradingView integration completed
+[2025-06-30T16:24:21.768Z] 2025-06-30 17:24:21 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T16:24:21.770Z] 2025-06-30 17:24:21 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T16:24:21.773Z] 2025-06-30 17:24:21 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T16:24:21.954Z] 2025-06-30 17:24:21 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T16:24:22.263Z] 2025-06-30 17:24:22 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T16:24:22.432Z] 2025-06-30 17:24:22 [32minfo[39m: ✅ PLN token contract verified
+[2025-06-30T16:24:22.615Z] 2025-06-30 17:24:22 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+[2025-06-30T16:24:22.619Z] 2025-06-30 17:24:22 [32minfo[39m: PLN Balance: 49.0
+2025-06-30 17:24:22 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 17:24:22 [32minfo[39m: ✅ Pollen Virtual Contract completed
+2025-06-30 17:24:22 [32minfo[39m: Step 4: Initializing main trading bot...
+2025-06-30 17:24:22 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T16:24:22.626Z] 2025-06-30 17:24:22 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T16:24:22.626Z] 2025-06-30 17:24:22 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T16:24:22.764Z] 2025-06-30 17:24:22 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T16:24:22.910Z] 2025-06-30 17:24:22 [32minfo[39m: Wallet AVAX balance: 0.02497922690710326
+[2025-06-30T16:24:23.030Z] 2025-06-30 17:24:23 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:24:23.030Z] 2025-06-30 17:24:23 [32minfo[39m: PLN balance: 0
+[2025-06-30T16:24:23.170Z] 2025-06-30 17:24:23 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:24:23.170Z] 2025-06-30 17:24:23 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T16:24:23.171Z] 2025-06-30 17:24:23 [32minfo[39m: Initializing Enhanced Trading Engine...
+[2025-06-30T16:24:23.171Z] 2025-06-30 17:24:23 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T16:24:23.173Z] 2025-06-30 17:24:23 [32minfo[39m: Starting PLN token verification...
+2025-06-30 17:24:23 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T16:24:24.061Z] 2025-06-30 17:24:24 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T16:24:27.063Z] 2025-06-30 17:24:27 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T16:24:27.064Z] 2025-06-30 17:24:27 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T16:24:27.236Z] 2025-06-30 17:24:27 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T16:24:30.245Z] 2025-06-30 17:24:30 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T16:24:48.980Z] 2025-06-30 17:24:48 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+2025-06-30 17:24:48 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T16:24:52.654Z] 2025-06-30 17:24:52 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T16:24:52.983Z] 2025-06-30 17:24:52 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:24:53.305Z] 2025-06-30 17:24:53 [32minfo[39m: Verification complete. Results:
+[2025-06-30T16:24:53.306Z] 2025-06-30 17:24:53 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:24:53.457Z] 2025-06-30 17:24:53 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:24:53.457Z] 2025-06-30 17:24:53 [32minfo[39m: Current PLN balance: 0
+2025-06-30 17:24:53 [31merror[39m: Error initializing trading bot:
+[2025-06-30T16:24:53.457Z] 2025-06-30 17:24:53 [31merror[39m: Error initializing trading bot manager:
+[2025-06-30T16:24:53.457Z] 2025-06-30 17:24:53 [31merror[39m: Full error details:
+[2025-06-30T16:24:53.458Z] 2025-06-30 17:24:53 [31merror[39m: Error in main:
+[2025-06-30T16:24:59.249Z] 2025-06-30 17:24:59 [32minfo[39m: Running in LIVE TRADING MODE - executing real transactions
+[2025-06-30T16:24:59.250Z] 2025-06-30 17:24:59 [32minfo[39m: Initializing trading bot manager...
+[2025-06-30T16:24:59.250Z] 2025-06-30 17:24:59 [32minfo[39m: Step 1: Initializing TradingView integration...
+[2025-06-30T16:24:59.250Z] 2025-06-30 17:24:59 [32minfo[39m: Initializing TradingView integration...
+[2025-06-30T16:24:59.251Z] 2025-06-30 17:24:59 [31merror[39m: Error initializing TradingView integration:
+[2025-06-30T16:24:59.251Z] 2025-06-30 17:24:59 [33mwarn[39m: Continuing without TradingView integration
+[2025-06-30T16:24:59.251Z] 2025-06-30 17:24:59 [32minfo[39m: ✅ TradingView integration completed
+[2025-06-30T16:24:59.252Z] 2025-06-30 17:24:59 [32minfo[39m: Step 2: Initializing portfolio optimizer...
+[2025-06-30T16:24:59.252Z] 2025-06-30 17:24:59 [32minfo[39m: ✅ Portfolio optimizer completed
+[2025-06-30T16:24:59.252Z] 2025-06-30 17:24:59 [32minfo[39m: Step 3: Initializing Pollen Virtual Contract...
+[2025-06-30T16:24:59.276Z] 2025-06-30 17:24:59 [32minfo[39m: Initializing Pollen Virtual Contract connection...
+[2025-06-30T16:24:59.502Z] 2025-06-30 17:24:59 [32minfo[39m: ✅ Virtual contract verified
+[2025-06-30T16:24:59.633Z] 2025-06-30 17:24:59 [32minfo[39m: ✅ PLN token contract verified
+[2025-06-30T16:24:59.769Z] 2025-06-30 17:24:59 [32minfo[39m: Connected wallet: 0x48B2353954496679CF7C73d239bc12098cB0C5B4
+[2025-06-30T16:24:59.769Z] 2025-06-30 17:24:59 [32minfo[39m: PLN Balance: 49.0
+[2025-06-30T16:24:59.769Z] 2025-06-30 17:24:59 [32minfo[39m: ✅ Pollen Virtual Contract connection initialized
+2025-06-30 17:24:59 [32minfo[39m: ✅ Pollen Virtual Contract completed
+[2025-06-30T16:24:59.769Z] 2025-06-30 17:24:59 [32minfo[39m: Step 4: Initializing main trading bot...
+[2025-06-30T16:24:59.769Z] 2025-06-30 17:24:59 [32minfo[39m: Initializing Pollen Trading Bot...
+[2025-06-30T16:24:59.772Z] 2025-06-30 17:24:59 [32minfo[39m: Pollen Contract Interface initialized
+[2025-06-30T16:24:59.772Z] 2025-06-30 17:24:59 [32minfo[39m: Initializing Pollen Contract Interface...
+[2025-06-30T16:24:59.883Z] 2025-06-30 17:24:59 [33mwarn[39m: Network mismatch. Expected Avalanche (43114), got 84532. Continuing in development mode...
+[2025-06-30T16:25:00.014Z] 2025-06-30 17:25:00 [32minfo[39m: Wallet AVAX balance: 0.02497922690710326
+[2025-06-30T16:25:00.146Z] 2025-06-30 17:25:00 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:25:00.147Z] 2025-06-30 17:25:00 [32minfo[39m: PLN balance: 0
+[2025-06-30T16:25:00.273Z] 2025-06-30 17:25:00 [33mwarn[39m: Contract connectivity test failed, continuing in simulation mode: could not decode result data (value="0x", info={ "method": "totalLocked", "signature": "totalLocked()" }, code=BAD_DATA, version=6.14.4)
+[2025-06-30T16:25:00.274Z] 2025-06-30 17:25:00 [32minfo[39m: ✅ Pollen Contract Interface ready for trading
+[2025-06-30T16:25:00.274Z] 2025-06-30 17:25:00 [32minfo[39m: Initializing Enhanced Trading Engine...
+2025-06-30 17:25:00 [32minfo[39m: Starting Pollen contract verification...
+[2025-06-30T16:25:00.274Z] 2025-06-30 17:25:00 [32minfo[39m: Starting PLN token verification...
+[2025-06-30T16:25:00.275Z] 2025-06-30 17:25:00 [32minfo[39m: Verifying PLN token contract...
+[2025-06-30T16:25:00.881Z] 2025-06-30 17:25:00 [32minfo[39m: PLN Token verification: {
+  "address": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "name": "Pollen",
+  "symbol": "PLN",
+  "decimals": 18,
+  "totalSupply": "184910277.69338576409360016",
+  "verified": true
+}
+[2025-06-30T16:25:03.958Z] 2025-06-30 17:25:03 [32minfo[39m: Starting Pollen DAO verification...
+[2025-06-30T16:25:03.965Z] 2025-06-30 17:25:03 [32minfo[39m: Verifying Pollen DAO contract...
+[2025-06-30T16:25:04.196Z] 2025-06-30 17:25:04 [32minfo[39m: Pollen DAO verification: {
+  "address": "0x8B312F4503790CBd1030b97C545c7F3eFDaDE717",
+  "pollenToken": "0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf",
+  "verified": true
+}
+[2025-06-30T16:25:07.330Z] 2025-06-30 17:25:07 [32minfo[39m: Verifying main contract at 0x2eCB6F9dF29163758024d416997764922E4528d4...
+[2025-06-30T16:25:26.551Z] 2025-06-30 17:25:26 [32minfo[39m: Contract analysis complete: pollen-trading, 16 working functions
+2025-06-30 17:25:26 [32minfo[39m: Verifying main contract at 0x3e0145d1418cda0ab4d3480effc6a5d3a0cfff5b...
+[2025-06-30T16:25:29.864Z] 2025-06-30 17:25:29 [32minfo[39m: Checking transaction history for 0x7b2B702706D9b361dfE3f00bD138C0CFDA7FB2Cf
+[2025-06-30T16:25:30.199Z] 2025-06-30 17:25:30 [32minfo[39m: Checking transaction history for 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:25:30.562Z] 2025-06-30 17:25:30 [32minfo[39m: Verification complete. Results:
+[2025-06-30T16:25:30.563Z] 2025-06-30 17:25:30 [32minfo[39m: Using main contract: MAIN_POLLEN at 0x2eCB6F9dF29163758024d416997764922E4528d4
+[2025-06-30T16:25:30.726Z] 2025-06-30 17:25:30 [31merror[39m: Error getting PLN balance: could not decode result data (value="0x", info={ "method": "balanceOf", "signature": "balanceOf(address)" }, code=BAD_DATA, version=6.14.4)
+2025-06-30 17:25:30 [32minfo[39m: Current PLN balance: 0
+[2025-06-30T16:25:30.726Z] 2025-06-30 17:25:30 [31merror[39m: Error initializing trading bot:
+2025-06-30 17:25:30 [31merror[39m: Error initializing trading bot manager:
+2025-06-30 17:25:30 [31merror[39m: Full error details:
+2025-06-30 17:25:30 [31merror[39m: Error in main:

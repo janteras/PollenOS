@@ -1,0 +1,403 @@
+{
+  "id": "pollen-pods-trading-bot-base-sepolia-default",
+  "name": "Pollen Pods Multi-Bot Trading Agent - Base Sepolia",
+  "description": "Advanced multi-bot autonomous trading system for Pollen Pods on Base Sepolia with funded wallets and optimized performance",
+  "version": "2.1.0",
+  "network": "base-sepolia",
+  "instructions": [
+    "You are an advanced multi-bot autonomous trading system for Pollen Pods on Base Sepolia.",
+    "You manage 4 funded trading bots, each with different strategies and risk profiles.",
+    "Your primary goal is to maximize portfolio performance while maintaining strict risk controls.",
+    "Execute trades only when market conditions align with your strategy parameters.",
+    "Coordinate between bots to avoid conflicts and optimize overall portfolio performance.",
+    "All funded wallets contain 0.025 ETH and 25 PLN tokens for trading operations.",
+    "Implement real-time monitoring and automatic error recovery for maximum reliability."
+  ],
+  "clients": [
+    "discord",
+    "telegram",
+    "rest-api",
+    "websocket"
+  ],
+  "bots": [
+    {
+      "id": "bot1",
+      "name": "Momentum Bot",
+      "address": "0x48B2353954496679CF7C73d239bc12098cB0C5B4",
+      "strategy": "momentum",
+      "risk_level": "moderate",
+      "max_allocation": 20,
+      "funded": true,
+      "trading_ready": true
+    },
+    {
+      "id": "bot3", 
+      "name": "Conservative Bot",
+      "address": "0x43f76157E9696302E287181828cB3B0C6B89d31e",
+      "strategy": "technical-conservative",
+      "risk_level": "low",
+      "max_allocation": 15,
+      "funded": true,
+      "trading_ready": true
+    },
+    {
+      "id": "bot4",
+      "name": "Mean Reversion Bot", 
+      "address": "0xC02764913ce2F23B094F0338a711EFD984024A46",
+      "strategy": "mean-reversion",
+      "risk_level": "moderate",
+      "max_allocation": 20,
+      "funded": true,
+      "trading_ready": true
+    },
+    {
+      "id": "bot5",
+      "name": "Breakout Bot",
+      "address": "0x00FfF703fa6837A1a46b3DF9B6a047404046379E", 
+      "strategy": "breakout",
+      "risk_level": "high",
+      "max_allocation": 25,
+      "funded": true,
+      "trading_ready": true
+    },
+    {
+      "id": "bot2",
+      "name": "Multi-Timeframe Bot",
+      "address": "0xf2c312F97c099f9d79bc3Ce058308923A02A3eeA",
+      "strategy": "multi-timeframe", 
+      "risk_level": "moderate",
+      "max_allocation": 20,
+      "funded": true,
+      "trading_ready": false,
+      "status": "MISSING_PRIVATE_KEY"
+    }
+  ],
+  "actions": [
+    {
+      "name": "analyze_market_multi_bot",
+      "description": "Comprehensive market analysis across all trading bots with strategy coordination",
+      "signature": "analyze_market_multi_bot(bots, timeframes, indicators)",
+      "implementation": "node src/actions/base-sepolia/analyze_market_multi_bot.js",
+      "handler": "analyzeMarketMultiBotAction",
+      "timeout": 45000,
+      "retries": 3,
+      "parallel": true
+    },
+    {
+      "name": "execute_coordinated_trades",
+      "description": "Execute coordinated trades across multiple bots with conflict resolution",
+      "signature": "execute_coordinated_trades(bot_trades, coordination_params)",
+      "implementation": "node src/actions/base-sepolia/execute_coordinated_trades.js", 
+      "handler": "executeCoordinatedTradesAction",
+      "timeout": 60000,
+      "retries": 2,
+      "validation_required": true,
+      "priority": "high"
+    },
+    {
+      "name": "monitor_bot_portfolio",
+      "description": "Monitor individual bot portfolios and overall system performance",
+      "signature": "monitor_bot_portfolio(bot_id, include_performance_metrics)",
+      "implementation": "node src/actions/base-sepolia/monitor_bot_portfolio.js",
+      "handler": "monitorBotPortfolioAction",
+      "timeout": 30000,
+      "schedule": "*/10 * * * *"
+    },
+    {
+      "name": "rebalance_multi_bot_portfolio",
+      "description": "Intelligent rebalancing across all bot portfolios with correlation analysis",
+      "signature": "rebalance_multi_bot_portfolio(rebalance_params, force_rebalance)",
+      "implementation": "node src/actions/base-sepolia/rebalance_multi_bot_portfolio.js",
+      "handler": "rebalanceMultiBotPortfolioAction",
+      "timeout": 90000,
+      "validation_required": true
+    },
+    {
+      "name": "validate_funded_wallets",
+      "description": "Validate funding status and readiness of all bot wallets",
+      "signature": "validate_funded_wallets(check_balances, verify_contracts)",
+      "implementation": "node src/actions/base-sepolia/validate_funded_wallets.js",
+      "handler": "validateFundedWalletsAction",
+      "timeout": 30000,
+      "schedule": "0 */2 * * *"
+    },
+    {
+      "name": "coordinate_bot_strategies",
+      "description": "Coordinate trading strategies between bots to optimize overall performance",
+      "signature": "coordinate_bot_strategies(active_bots, market_conditions)",
+      "implementation": "node src/actions/base-sepolia/coordinate_bot_strategies.js",
+      "handler": "coordinateBotStrategiesAction",
+      "timeout": 45000
+    },
+    {
+      "name": "emergency_stop_all_bots", 
+      "description": "Emergency stop mechanism for all bots in critical situations",
+      "signature": "emergency_stop_all_bots(reason, severity_level)",
+      "implementation": "node src/actions/base-sepolia/emergency_stop_all_bots.js",
+      "handler": "emergencyStopAllBotsAction",
+      "priority": "critical",
+      "timeout": 20000
+    },
+    {
+      "name": "performance_analysis",
+      "description": "Comprehensive performance analysis across all trading bots",
+      "signature": "performance_analysis(time_period, include_comparison)",
+      "implementation": "node src/actions/base-sepolia/performance_analysis.js",
+      "handler": "performanceAnalysisAction",
+      "timeout": 60000
+    }
+  ],
+  "knowledge": [
+    {
+      "name": "base-sepolia-funded-wallets",
+      "description": "Documentation of funded wallet addresses and their configurations",
+      "path": "../docs/base-sepolia/funded-wallets-guide.md"
+    },
+    {
+      "name": "multi-bot-trading-strategies",
+      "description": "Multi-bot trading strategies and coordination mechanisms",
+      "path": "../docs/base-sepolia/multi-bot-strategies.md"
+    },
+    {
+      "name": "base-sepolia-contract-interfaces",
+      "description": "Base Sepolia contract interfaces and interaction patterns",
+      "path": "../docs/base-sepolia/contract-interfaces.md"
+    },
+    {
+      "name": "risk-management-framework",
+      "description": "Comprehensive risk management framework for multi-bot operations",
+      "path": "../docs/base-sepolia/risk-management.md"
+    },
+    {
+      "name": "performance-optimization-guide",
+      "description": "Performance optimization techniques for Base Sepolia trading",
+      "path": "../docs/base-sepolia/performance-optimization.md"
+    }
+  ],
+  "configuration": {
+    "network": {
+      "type": "string",
+      "description": "Base Sepolia network configuration",
+      "default": "base-sepolia",
+      "readonly": true
+    },
+    "chain_id": {
+      "type": "number", 
+      "description": "Base Sepolia chain ID",
+      "default": 84532,
+      "readonly": true
+    },
+    "active_bots": {
+      "type": "number",
+      "description": "Number of active trading bots",
+      "default": 4,
+      "min": 1,
+      "max": 5
+    },
+    "coordination_mode": {
+      "type": "string",
+      "description": "Bot coordination strategy",
+      "default": "intelligent",
+      "enum": ["independent", "coordinated", "intelligent"]
+    },
+    "global_risk_level": {
+      "type": "string",
+      "description": "Global risk level for all bots",
+      "default": "moderate",
+      "enum": ["conservative", "low", "moderate", "aggressive", "high"]
+    },
+    "max_total_allocation": {
+      "type": "number",
+      "description": "Maximum total allocation across all bots",
+      "default": 80,
+      "min": 50,
+      "max": 95
+    },
+    "enable_auto_rebalancing": {
+      "type": "boolean",
+      "description": "Enable automatic portfolio rebalancing",
+      "default": true
+    },
+    "rebalance_threshold": {
+      "type": "number",
+      "description": "Threshold for triggering rebalancing",
+      "default": 2,
+      "min": 1,
+      "max": 10
+    },
+    "correlation_limit": {
+      "type": "number",
+      "description": "Maximum correlation between bot positions",
+      "default": 0.6,
+      "min": 0.3,
+      "max": 0.9
+    },
+    "funding_monitoring": {
+      "type": "boolean",
+      "description": "Enable continuous funding monitoring",
+      "default": true
+    },
+    "low_balance_threshold_eth": {
+      "type": "number",
+      "description": "Low ETH balance alert threshold",
+      "default": 0.005,
+      "min": 0.001,
+      "max": 0.02
+    },
+    "low_balance_threshold_pln": {
+      "type": "number",
+      "description": "Low PLN balance alert threshold", 
+      "default": 5.0,
+      "min": 1.0,
+      "max": 20.0
+    }
+  },
+  "security": {
+    "enable_transaction_simulation": true,
+    "require_confirmation_for_large_trades": true,
+    "max_daily_transaction_value_per_bot": "0.02",
+    "max_total_daily_transaction_value": "0.08",
+    "enable_whitelist_addresses": true,
+    "enable_multi_bot_validation": true,
+    "allowed_contract_interactions": [
+      "0xEF789258233E6cFBB5E0bb093FC9537E69e81Bb7",
+      "0x55F04Ee2775925b80125F412C05cF5214Fd1317a", 
+      "0x3a28AB567b661B3edaF9Ef0bDE9489558EDB3995",
+      "0x9E1c51E1fAa1381D8a7Dbdd19402c5fCce9274C6"
+    ],
+    "bot_isolation": true,
+    "cross_bot_validation": true,
+    "emergency_stop_conditions": [
+      "high_correlation_detected",
+      "funding_threshold_breach",
+      "unusual_market_volatility",
+      "system_performance_degradation"
+    ]
+  },
+  "memories": [
+    {
+      "id": "multi-bot-trading-history",
+      "description": "Comprehensive trading history across all bots",
+      "path": "./memories/multi-bot-trading-history.json",
+      "retention_days": 120,
+      "encryption": true
+    },
+    {
+      "id": "bot-performance-metrics",
+      "description": "Individual and aggregate bot performance metrics",
+      "path": "./memories/bot-performance-metrics.json",
+      "retention_days": 180
+    },
+    {
+      "id": "funding-status-history",
+      "description": "Historical funding status and balance tracking",
+      "path": "./memories/funding-status-history.json",
+      "retention_days": 90
+    },
+    {
+      "id": "coordination-decisions",
+      "description": "Bot coordination decisions and outcomes",
+      "path": "./memories/coordination-decisions.json",
+      "retention_days": 60
+    },
+    {
+      "id": "market-analysis-cache",
+      "description": "Cached market analysis results for performance",
+      "path": "./memories/market-analysis-cache.json",
+      "retention_days": 7
+    }
+  ],
+  "loaders": [
+    {
+      "name": "funded-wallets-loader",
+      "implementation": "node src/loaders/load_funded_wallets.js",
+      "priority": "critical"
+    },
+    {
+      "name": "multi-bot-config-loader",
+      "implementation": "node src/loaders/load_multi_bot_config.js",
+      "priority": "high"
+    },
+    {
+      "name": "strategy-coordination-loader", 
+      "implementation": "node src/loaders/load_strategy_coordination.js",
+      "priority": "medium"
+    }
+  ],
+  "schedule": [
+    {
+      "name": "validate-funded-wallets",
+      "description": "Regular validation of wallet funding status",
+      "action": "validate_funded_wallets",
+      "cron": "0 */2 * * *",
+      "enabled": true,
+      "priority": "high"
+    },
+    {
+      "name": "multi-bot-market-analysis",
+      "description": "Coordinated market analysis across all bots",
+      "action": "analyze_market_multi_bot", 
+      "cron": "*/5 * * * *",
+      "enabled": true
+    },
+    {
+      "name": "portfolio-monitoring",
+      "description": "Continuous portfolio monitoring for all bots",
+      "action": "monitor_bot_portfolio",
+      "cron": "*/10 * * * *",
+      "enabled": true
+    },
+    {
+      "name": "strategy-coordination",
+      "description": "Regular strategy coordination between bots",
+      "action": "coordinate_bot_strategies",
+      "cron": "*/15 * * * *", 
+      "enabled": true
+    },
+    {
+      "name": "portfolio-rebalancing",
+      "description": "Automatic portfolio rebalancing across bots",
+      "action": "rebalance_multi_bot_portfolio",
+      "cron": "0 */4 * * *",
+      "enabled": true
+    },
+    {
+      "name": "performance-analysis",
+      "description": "Daily performance analysis and reporting",
+      "action": "performance_analysis",
+      "cron": "0 0 * * *",
+      "enabled": true
+    }
+  ],
+  "performance": {
+    "enable_parallel_processing": true,
+    "max_concurrent_bot_operations": 4,
+    "enable_caching": true,
+    "cache_ttl_seconds": 180,
+    "enable_request_batching": true,
+    "batch_size": 8,
+    "max_concurrent_requests": 10,
+    "request_timeout_ms": 25000,
+    "retry_attempts": 5,
+    "retry_backoff_ms": 2000,
+    "enable_performance_monitoring": true
+  },
+  "monitoring": {
+    "enable_real_time_monitoring": true,
+    "health_check_interval": 120000,
+    "enable_bot_status_monitoring": true,
+    "bot_health_check_interval": 300000,
+    "enable_funding_monitoring": true,
+    "funding_check_interval": 600000,
+    "enable_performance_tracking": true,
+    "performance_check_interval": 900000,
+    "alert_thresholds": {
+      "response_time_ms": 3000,
+      "error_rate_percent": 3,
+      "funding_threshold_eth": 0.005,
+      "funding_threshold_pln": 5.0,
+      "correlation_threshold": 0.8
+    },
+    "enable_predictive_alerts": true
+  }
+} 

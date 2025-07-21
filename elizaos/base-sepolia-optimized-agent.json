@@ -1,0 +1,365 @@
+{
+  "id": "pollen-pods-trading-bot-base-sepolia-optimized",
+  "name": "Pollen Pods Trading Agent - Base Sepolia Optimized",
+  "description": "An advanced autonomous trading agent for Pollen Pods on Base Sepolia testnet with enhanced security, performance optimization, and comprehensive risk management",
+  "version": "2.0.0",
+  "instructions": [
+    "You are an advanced autonomous trading agent for Pollen Pods, optimized for Base Sepolia testnet.",
+    "Your primary goal is to analyze market data from TradingView and execute optimal virtual trades on the Pollen app.",
+    "You operate exclusively on Base Sepolia network (Chain ID: 84532) for safe testing and development.",
+    "Follow the configured trading strategy with enhanced risk parameters and security measures.",
+    "Only execute trades when conditions meet strict validation criteria and risk thresholds.",
+    "All trades are virtual/simulated on Base Sepolia testnet with comprehensive logging and monitoring.",
+    "Maintain optimal portfolio allocation while respecting maximum position sizes and correlation limits.",
+    "Implement circuit breakers and emergency stops when market conditions become unfavorable."
+  ],
+  "clients": [
+    "discord",
+    "telegram",
+    "rest-api"
+  ],
+  "actions": [
+    {
+      "name": "analyze_market_base_sepolia_optimized",
+      "description": "Advanced market analysis using TradingView data with technical indicators for Base Sepolia",
+      "signature": "analyze_market_base_sepolia_optimized(timeframe, indicators, risk_level)",
+      "implementation": "node src/actions/analyze_market_base_sepolia_optimized.js",
+      "handler": "analyzeMarketBaseSepoliaOptimizedAction",
+      "timeout": 30000,
+      "retries": 3
+    },
+    {
+      "name": "execute_trade_base_sepolia_optimized",
+      "description": "Execute optimized virtual trades with enhanced risk management and validation",
+      "signature": "execute_trade_base_sepolia_optimized(assets, allocations, risk_params, validation_level)",
+      "implementation": "node src/actions/execute_trade_base_sepolia_optimized.js",
+      "handler": "executeTradeBaseSepoliaOptimizedAction",
+      "timeout": 45000,
+      "retries": 2,
+      "validation_required": true
+    },
+    {
+      "name": "check_portfolio_base_sepolia_optimized",
+      "description": "Comprehensive portfolio analysis with performance metrics and risk assessment",
+      "signature": "check_portfolio_base_sepolia_optimized(include_history, risk_analysis)",
+      "implementation": "node src/actions/check_portfolio_base_sepolia_optimized.js",
+      "handler": "checkPortfolioBaseSepoliaOptimizedAction",
+      "timeout": 20000
+    },
+    {
+      "name": "validate_contracts_base_sepolia_optimized",
+      "description": "Enhanced contract validation with security checks and ABI verification",
+      "signature": "validate_contracts_base_sepolia_optimized(deep_validation)",
+      "implementation": "node src/actions/validate_contracts_base_sepolia_optimized.js",
+      "handler": "validateContractsBaseSepoliaOptimizedAction",
+      "schedule": "0 */2 * * *"
+    },
+    {
+      "name": "monitor_gas_prices_optimized",
+      "description": "Advanced gas price monitoring with dynamic fee calculation",
+      "signature": "monitor_gas_prices_optimized(prediction_window)",
+      "implementation": "node src/actions/monitor_gas_prices_optimized.js",
+      "handler": "monitorGasPricesOptimizedAction",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "name": "risk_assessment_base_sepolia_optimized",
+      "description": "Comprehensive risk assessment with correlation analysis and stress testing",
+      "signature": "risk_assessment_base_sepolia_optimized(trade_params, market_conditions)",
+      "implementation": "node src/actions/risk_assessment_base_sepolia_optimized.js",
+      "handler": "riskAssessmentBaseSepoliaOptimizedAction"
+    },
+    {
+      "name": "set_thesis_base_sepolia_optimized",
+      "description": "Update trading thesis with market sentiment and technical analysis",
+      "signature": "set_thesis_base_sepolia_optimized(thesis, confidence_level, duration)",
+      "implementation": "node src/actions/set_thesis_base_sepolia_optimized.js",
+      "handler": "setThesisBaseSepoliaOptimizedAction"
+    },
+    {
+      "name": "emergency_stop_base_sepolia",
+      "description": "Emergency stop mechanism for unusual market conditions",
+      "signature": "emergency_stop_base_sepolia(reason, severity)",
+      "implementation": "node src/actions/emergency_stop_base_sepolia.js",
+      "handler": "emergencyStopBaseSepoliaAction",
+      "priority": "critical"
+    }
+  ],
+  "knowledge": [
+    {
+      "name": "pollen-base-sepolia-contracts-optimized",
+      "description": "Comprehensive Base Sepolia contract documentation with security analysis",
+      "path": "../docs/base-sepolia/base-sepolia-contracts-optimized.md"
+    },
+    {
+      "name": "base-sepolia-trading-strategies",
+      "description": "Advanced trading strategies optimized for Base Sepolia testnet",
+      "path": "../docs/base-sepolia/base-sepolia-trading-strategies.md"
+    },
+    {
+      "name": "base-network-security-guide",
+      "description": "Security best practices and threat mitigation for Base network",
+      "path": "../docs/base-sepolia/base-network-security-guide.md"
+    },
+    {
+      "name": "risk-management-framework",
+      "description": "Comprehensive risk management and portfolio optimization framework",
+      "path": "../docs/base-sepolia/risk-management-framework.md"
+    }
+  ],
+  "configuration": {
+    "network": {
+      "type": "string",
+      "description": "Blockchain network (fixed to base-sepolia for this optimized agent)",
+      "default": "base-sepolia",
+      "readonly": true,
+      "validation": "^base-sepolia$"
+    },
+    "chain_id": {
+      "type": "number",
+      "description": "Base Sepolia chain ID",
+      "default": 84532,
+      "readonly": true,
+      "validation": "84532"
+    },
+    "rpc_url": {
+      "type": "string",
+      "description": "Primary Base Sepolia RPC endpoint with failover support",
+      "default": "https://sepolia.base.org",
+      "secret": false,
+      "validation": "^https://.*"
+    },
+    "private_key": {
+      "type": "string",
+      "description": "Ethereum private key for Base Sepolia testnet (encrypted storage required)",
+      "secret": true,
+      "encryption": "required",
+      "validation": "^0x[a-fA-F0-9]{64}$"
+    },
+    "pollen_dao_address": {
+      "type": "string",
+      "description": "Validated PollenDAO contract address on Base Sepolia",
+      "default": "0xEF789258233E6cFBB5E0bb093FC9537E69e81Bb7",
+      "readonly": true,
+      "validated": true
+    },
+    "leagues_address": {
+      "type": "string",
+      "description": "Validated Leagues contract address on Base Sepolia",
+      "default": "0x55F04Ee2775925b80125F412C05cF5214Fd1317a",
+      "readonly": true,
+      "validated": true
+    },
+    "vepln_address": {
+      "type": "string",
+      "description": "Validated vePln contract address on Base Sepolia",
+      "default": "0x3a28AB567b661B3edaF9Ef0bDE9489558EDB3995",
+      "readonly": true,
+      "validated": true
+    },
+    "pln_token_address": {
+      "type": "string",
+      "description": "Validated PLN token contract address on Base Sepolia",
+      "default": "0x9E1c51E1fAa1381D8a7Dbdd19402c5fCce9274C6",
+      "readonly": true,
+      "validated": true
+    },
+    "risk_level": {
+      "type": "string",
+      "description": "Enhanced risk level with granular control",
+      "default": "conservative",
+      "enum": ["ultra-conservative", "conservative", "moderate", "aggressive", "high-risk"]
+    },
+    "trading_interval": {
+      "type": "number",
+      "description": "Optimized interval between trades in milliseconds",
+      "default": 7200000,
+      "min": 600000,
+      "max": 86400000
+    },
+    "auto_rebalance": {
+      "type": "boolean",
+      "description": "Intelligent auto-rebalancing with correlation analysis",
+      "default": true
+    },
+    "rebalance_threshold": {
+      "type": "number",
+      "description": "Dynamic rebalancing threshold with market volatility adjustment",
+      "default": 3,
+      "min": 1,
+      "max": 15
+    },
+    "max_allocation": {
+      "type": "number",
+      "description": "Maximum percentage allocated to a single asset with risk scaling",
+      "default": 15,
+      "min": 5,
+      "max": 25
+    },
+    "correlation_limit": {
+      "type": "number",
+      "description": "Maximum correlation between assets in portfolio",
+      "default": 0.7,
+      "min": 0.3,
+      "max": 0.9
+    },
+    "gas_optimization": {
+      "type": "boolean",
+      "description": "Enable dynamic gas optimization",
+      "default": true
+    },
+    "max_gas_price_gwei": {
+      "type": "number",
+      "description": "Maximum gas price in Gwei with dynamic adjustment",
+      "default": 2.0,
+      "min": 0.1,
+      "max": 10.0
+    },
+    "simulation_mode": {
+      "type": "boolean",
+      "description": "Enhanced simulation mode with comprehensive testing",
+      "default": true
+    },
+    "thesis": {
+      "type": "string",
+      "description": "AI-enhanced trading thesis with market sentiment integration",
+      "default": "Optimized testing and development of advanced trading strategies on Base Sepolia testnet with comprehensive risk management"
+    },
+    "enable_ml_features": {
+      "type": "boolean",
+      "description": "Enable machine learning enhanced features",
+      "default": false
+    },
+    "circuit_breaker_threshold": {
+      "type": "number",
+      "description": "Portfolio loss threshold for emergency stop",
+      "default": 0.15,
+      "min": 0.05,
+      "max": 0.30
+    }
+  },
+  "security": {
+    "enable_transaction_simulation": true,
+    "require_confirmation_for_large_trades": true,
+    "max_daily_transaction_value": "1000",
+    "enable_whitelist_addresses": true,
+    "enable_replay_protection": true,
+    "enable_signature_verification": true,
+    "transaction_timeout_ms": 300000,
+    "allowed_contract_interactions": [
+      "0xEF789258233E6cFBB5E0bb093FC9537E69e81Bb7",
+      "0x55F04Ee2775925b80125F412C05cF5214Fd1317a",
+      "0x3a28AB567b661B3edaF9Ef0bDE9489558EDB3995",
+      "0x9E1c51E1fAa1381D8a7Dbdd19402c5fCce9274C6"
+    ],
+    "security_checks": [
+      "contract_verification",
+      "address_validation",
+      "transaction_simulation",
+      "gas_estimation",
+      "nonce_management"
+    ]
+  },
+  "memories": [
+    {
+      "id": "base-sepolia-trading-history-optimized",
+      "description": "Comprehensive trading history with performance analytics",
+      "path": "./memories/base-sepolia-trading-history-optimized.json",
+      "retention_days": 90,
+      "encryption": true
+    },
+    {
+      "id": "base-sepolia-performance-metrics-optimized",
+      "description": "Advanced performance metrics with ML insights",
+      "path": "./memories/base-sepolia-performance-optimized.json",
+      "retention_days": 180
+    },
+    {
+      "id": "contract-validation-cache-optimized",
+      "description": "Enhanced contract validation results with security analysis",
+      "path": "./memories/contract-validation-optimized.json",
+      "retention_days": 30
+    },
+    {
+      "id": "market-sentiment-analysis",
+      "description": "Market sentiment and technical analysis cache",
+      "path": "./memories/market-sentiment-analysis.json",
+      "retention_days": 14
+    }
+  ],
+  "loaders": [
+    {
+      "name": "base-sepolia-config-loader-optimized",
+      "implementation": "node src/loaders/load_base_sepolia_config_optimized.js",
+      "priority": "high"
+    },
+    {
+      "name": "contract-validator-optimized",
+      "implementation": "node src/loaders/validate_base_sepolia_contracts_optimized.js",
+      "schedule": "0 */4 * * *"
+    },
+    {
+      "name": "market-data-preloader",
+      "implementation": "node src/loaders/preload_market_data.js",
+      "schedule": "*/10 * * * *"
+    }
+  ],
+  "schedule": [
+    {
+      "name": "enhanced-contract-validation",
+      "description": "Comprehensive contract validation with security checks",
+      "action": "validate_contracts_base_sepolia_optimized",
+      "cron": "0 */2 * * *",
+      "enabled": true
+    },
+    {
+      "name": "advanced-market-analysis",
+      "description": "Advanced market analysis with ML insights",
+      "action": "analyze_market_base_sepolia_optimized",
+      "cron": "*/10 * * * *",
+      "enabled": true
+    },
+    {
+      "name": "comprehensive-portfolio-check",
+      "description": "Comprehensive portfolio analysis with risk assessment",
+      "action": "check_portfolio_base_sepolia_optimized",
+      "cron": "0 */3 * * *",
+      "enabled": true
+    },
+    {
+      "name": "dynamic-gas-monitoring",
+      "description": "Dynamic gas price monitoring and optimization",
+      "action": "monitor_gas_prices_optimized",
+      "cron": "*/5 * * * *",
+      "enabled": true
+    },
+    {
+      "name": "risk-assessment-update",
+      "description": "Regular risk assessment and portfolio rebalancing",
+      "action": "risk_assessment_base_sepolia_optimized",
+      "cron": "0 */6 * * *",
+      "enabled": true
+    }
+  ],
+  "performance": {
+    "enable_caching": true,
+    "cache_ttl_seconds": 300,
+    "enable_request_batching": true,
+    "batch_size": 10,
+    "max_concurrent_requests": 5,
+    "request_timeout_ms": 30000,
+    "retry_attempts": 3,
+    "retry_backoff_ms": 1000
+  },
+  "monitoring": {
+    "enable_health_checks": true,
+    "health_check_interval": 300000,
+    "enable_metrics_collection": true,
+    "metrics_retention_days": 30,
+    "alert_thresholds": {
+      "response_time_ms": 5000,
+      "error_rate_percent": 5,
+      "gas_price_gwei": 5.0
+    }
+  }
+} 

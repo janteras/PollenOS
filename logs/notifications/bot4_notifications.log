@@ -1,0 +1,86 @@
+[2025-05-29T14:28:00.394Z] [INFO] Bot starting up
+[2025-05-29T14:30:42.561Z] [INFO] Starting new trading cycle
+[2025-05-29T14:33:39.948Z] [CRITICAL] Trading cycle failed: server response 401 Unauthorized (request={  }, response={  }, error=null, info={ "requestUrl": "https://avalanche-mainnet.infura.io/v3/nZm3gvuzZscBnLktmxR0VRz6kvAK4NRqtXEMZKS9EsqjMkNis3vPgA", "responseBody": "invalid project id\n", "responseStatus": "401 Unauthorized" }, code=SERVER_ERROR, version=6.14.3)
+[2025-05-29T14:33:39.948Z] [INFO] Bot successfully started
+[2025-05-29T14:53:00.209Z] [INFO] Bot starting up
+[2025-05-29T14:59:33.226Z] [INFO] Bot starting up
+[2025-05-29T15:02:20.157Z] [INFO] Starting new trading cycle
+[2025-05-29T15:05:03.974Z] [CRITICAL] Trading cycle failed: server response 401 Unauthorized (request={  }, response={  }, error=null, info={ "requestUrl": "https://avalanche-mainnet.infura.io/v3/nZm3gvuzZscBnLktmxR0VRz6kvAK4NRqtXEMZKS9EsqjMkNis3vPgA", "responseBody": "invalid project id\n", "responseStatus": "401 Unauthorized" }, code=SERVER_ERROR, version=6.14.3)
+[2025-05-29T15:05:03.975Z] [INFO] Bot successfully started
+[2025-05-29T15:14:23.232Z] [INFO] Bot starting up
+[2025-05-29T15:16:54.118Z] [INFO] Starting new trading cycle
+[2025-05-29T15:16:54.303Z] [CRITICAL] Trading cycle failed: network does not support ENS (operation="getEnsAddress", info={ "network": { "chainId": "43114", "name": "unknown" } }, code=UNSUPPORTED_OPERATION, version=6.14.3)
+[2025-05-29T15:16:54.304Z] [INFO] Bot successfully started
+[2025-05-29T15:24:56.202Z] [INFO] Bot starting up
+[2025-05-29T15:29:23.498Z] [INFO] Starting new trading cycle
+[2025-05-29T15:34:03.684Z] [CRITICAL] Trading cycle failed: network does not support ENS (operation="getEnsAddress", info={ "network": { "chainId": "43114", "name": "unknown" } }, code=UNSUPPORTED_OPERATION, version=6.14.3)
+[2025-05-29T15:34:03.684Z] [INFO] Bot successfully started
+[2025-05-29T15:59:18.061Z] [INFO] Bot starting up
+[2025-05-29T16:03:58.408Z] [INFO] Starting new trading cycle
+[2025-05-29T16:13:19.958Z] [INFO] Bot starting up
+[2025-05-29T16:17:16.384Z] [INFO] Starting new trading cycle
+[2025-05-29T16:31:07.541Z] [INFO] Bot starting up
+[2025-05-29T16:35:54.452Z] [INFO] Starting new trading cycle
+[2025-05-29T16:46:23.835Z] [INFO] Bot starting up
+[2025-05-29T17:07:47.603Z] [INFO] Bot starting up
+[2025-05-29T17:14:06.543Z] [INFO] Bot starting up
+[2025-05-29T17:32:31.094Z] [INFO] Bot starting up
+[2025-05-29T17:44:30.695Z] [INFO] Bot starting up
+[2025-05-29T18:00:42.893Z] [INFO] Bot starting up
+[2025-05-29T19:04:26.307Z] [INFO] Bot starting up
+[2025-05-29T19:58:35.486Z] [INFO] Bot starting up
+[2025-05-29T20:23:34.447Z] [INFO] Bot starting up
+[2025-05-29T20:38:20.346Z] [INFO] Bot starting up
+[2025-05-29T21:24:24.234Z] [INFO] Bot starting up
+[2025-05-29T21:38:06.111Z] [INFO] Bot starting up
+[2025-05-29T21:47:41.368Z] [INFO] Bot starting up
+[2025-05-29T22:04:26.820Z] [INFO] Bot starting up
+[2025-05-29T22:22:05.833Z] [INFO] Bot starting up
+[2025-05-30T10:55:40.783Z] [INFO] Bot starting up
+[2025-05-30T11:17:00.854Z] [INFO] Bot starting up
+[2025-05-30T11:35:25.861Z] [INFO] Bot starting up
+[2025-05-30T11:55:42.099Z] [INFO] Bot starting up
+[2025-05-30T12:53:20.952Z] [INFO] Starting new trading cycle
+[2025-05-30T12:54:01.396Z] [INFO] Bot starting up
+[2025-05-30T13:10:14.319Z] [INFO] Bot starting up
+[2025-05-30T13:10:14.358Z] [INFO] Bot starting up
+[2025-05-30T13:22:10.936Z] [INFO] Bot starting up
+[2025-05-30T13:37:14.969Z] [INFO] Bot starting up
+[2025-05-30T13:58:41.032Z] [INFO] Bot starting up
+[2025-05-30T15:29:27.331Z] [INFO] Bot starting up
+[2025-05-30T15:54:03.003Z] [INFO] Bot starting up
+[2025-05-30T16:52:17.109Z] [INFO] Starting new trading cycle
+[2025-05-30T17:20:09.146Z] [INFO] Bot starting up
+[2025-05-30T17:42:33.030Z] [INFO] Bot starting up
+[2025-05-31T19:41:29.540Z] [INFO] Bot starting up
+[2025-06-01T02:12:45.502Z] [INFO] Bot starting up
+[2025-06-01T02:22:36.441Z] [INFO] Bot starting up
+[2025-06-01T06:56:14.568Z] [INFO] Bot starting up
+[2025-06-01T11:16:28.780Z] [INFO] Bot starting up
+[2025-06-01T12:13:21.156Z] [INFO] Starting new trading cycle
+[2025-06-01T12:13:51.171Z] [INFO] Starting new trading cycle
+[2025-06-01T12:43:21.161Z] [CRITICAL] Trading cycle failed: Trading cycle timeout
+[2025-06-01T12:43:21.161Z] [INFO] Bot successfully started
+[2025-06-01T12:54:58.927Z] [INFO] Bot starting up
+[2025-06-01T13:01:51.732Z] [INFO] Bot starting up
+[2025-06-01T13:29:32.484Z] [INFO] Bot starting up
+[2025-06-01T13:38:18.248Z] [INFO] Bot starting up
+[2025-06-02T23:19:59.588Z] [INFO] Bot starting up
+[2025-06-02T23:35:02.272Z] [INFO] Bot starting up
+[2025-06-02T23:46:21.263Z] [INFO] Bot starting up
+[2025-06-03T08:28:10.426Z] [INFO] Bot starting up
+[2025-06-03T08:44:01.492Z] [INFO] Bot starting up
+[2025-06-03T09:13:32.661Z] [INFO] Bot starting up
+[2025-06-03T09:23:37.993Z] [INFO] Bot starting up
+[2025-06-03T09:53:31.894Z] [INFO] Bot starting up
+[2025-06-03T10:09:59.915Z] [INFO] Bot starting up
+[2025-06-03T13:24:02.063Z] [INFO] Bot starting up
+[2025-06-03T13:57:26.668Z] [INFO] Bot starting up
+[2025-06-03T16:20:03.855Z] [INFO] Bot starting up
+[2025-06-03T17:09:47.246Z] [INFO] Bot starting up
+[2025-06-03T17:30:30.676Z] [INFO] Bot starting up
+[2025-06-03T17:53:30.380Z] [INFO] Bot starting up
+[2025-06-04T04:53:36.706Z] [INFO] Bot starting up
+[2025-06-05T08:13:24.996Z] [INFO] Bot starting up
+[2025-06-05T08:31:31.051Z] [INFO] Bot starting up
+[2025-06-05T08:52:10.181Z] [INFO] Bot starting up

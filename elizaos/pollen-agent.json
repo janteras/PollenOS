@@ -1,0 +1,140 @@
+{
+  "id": "pollen-trading-bot",
+  "name": "Pollen Trading Agent",
+  "description": "An autonomous trading agent for Pollen that uses TradingView data to execute trades on Avalanche and Base networks",
+  "instructions": [
+    "You are an autonomous trading agent for Pollen, a decentralized prediction market and trading arena.",
+    "Your goal is to analyze market data from TradingView and execute optimal trades on the Pollen app.",
+    "You operate on both Avalanche and Base networks, supporting their testnets as well.",
+    "Follow the configured trading strategy and risk parameters set by your user.",
+    "Only execute trades when conditions meet the specified criteria in your configuration."
+  ],
+  "clients": [],
+  "actions": [
+    {
+      "name": "analyze_market",
+      "description": "Analyze current market conditions using TradingView data",
+      "signature": "analyze_market()",
+      "implementation": "node src/actions/analyze_market.js",
+      "handler": "analyzeMarketAction"
+    },
+    {
+      "name": "execute_trade",
+      "description": "Execute a trade on the Pollen platform with risk management",
+      "signature": "execute_trade(assets, allocations, risk_params)",
+      "implementation": "node src/actions/execute_trade.js",
+      "handler": "executeTradeAction"
+    },
+    {
+      "name": "check_portfolio",
+      "description": "Check current portfolio allocation, performance, and provide insights",
+      "signature": "check_portfolio()",
+      "implementation": "node src/actions/check_portfolio.js",
+      "handler": "checkPortfolioAction"
+    },
+    {
+      "name": "set_thesis",
+      "description": "Update the trading thesis for your Pollen neuron",
+      "signature": "set_thesis(thesis)",
+      "implementation": "node src/actions/set_thesis.js"
+    },
+    {
+      "name": "send_notification",
+      "description": "Send a notification to the user about portfolio activity",
+      "signature": "send_notification(message, priority)",
+      "implementation": "node src/actions/send_notification.js"
+    },
+    {
+      "name": "risk_assessment",
+      "description": "Assess risk levels for trading decisions",
+      "signature": "risk_assessment(trade_params)",
+      "implementation": "node src/actions/risk_assessment.js"
+    }
+  ],
+  "knowledge": [
+    {
+      "name": "pollen-whitepaper",
+      "description": "The Pollen protocol whitepaper",
+      "path": "../docs/pollen-whitepaper.md"
+    },
+    {
+      "name": "trading-strategies",
+      "description": "Trading strategies implemented by this bot",
+      "path": "../docs/strategies.md"
+    }
+  ],
+  "configuration": {
+    "network": {
+      "type": "string",
+      "description": "Blockchain network to use (avalanche, base, avalanche-testnet, base-testnet)",
+      "default": "avalanche"
+    },
+    "private_key": {
+      "type": "string",
+      "description": "Ethereum private key for executing transactions",
+      "secret": true
+    },
+    "risk_level": {
+      "type": "string",
+      "description": "Risk level for trading strategy (low, medium, high)",
+      "default": "medium"
+    },
+    "trading_interval": {
+      "type": "number",
+      "description": "Interval between trades in milliseconds",
+      "default": 3600000
+    },
+    "auto_rebalance": {
+      "type": "boolean",
+      "description": "Automatically rebalance portfolio when threshold is reached",
+      "default": true
+    },
+    "rebalance_threshold": {
+      "type": "number",
+      "description": "Minimum percentage difference to trigger rebalancing",
+      "default": 5
+    },
+    "max_allocation": {
+      "type": "number",
+      "description": "Maximum percentage allocated to a single asset",
+      "default": 20
+    },
+    "thesis": {
+      "type": "string",
+      "description": "Trading thesis for your Pollen neuron",
+      "default": "Trading based on technical indicators"
+    }
+  },
+  "memories": [
+    {
+      "id": "trading-history",
+      "description": "History of trades executed by the agent",
+      "path": "./memories/trading-history.json"
+    },
+    {
+      "id": "performance-metrics",
+      "description": "Historical performance metrics",
+      "path": "./memories/performance.json"
+    }
+  ],
+  "loaders": [
+    {
+      "name": "pollen-config-loader",
+      "implementation": "node src/loaders/load_config.js"
+    }
+  ],
+  "schedule": [
+    {
+      "name": "market-analysis",
+      "description": "Regular market analysis",
+      "action": "analyze_market",
+      "cron": "0 * * * *"
+    },
+    {
+      "name": "portfolio-check",
+      "description": "Regular portfolio check",
+      "action": "check_portfolio",
+      "cron": "0 */6 * * *"
+    }
+  ]
+}

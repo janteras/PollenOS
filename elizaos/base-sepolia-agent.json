@@ -1,0 +1,263 @@
+{
+  "id": "pollen-trading-bot-base-sepolia",
+  "name": "Pollen Trading Agent - Base Sepolia",
+  "description": "An autonomous trading agent for Pollen on Base Sepolia testnet that uses TradingView data to execute virtual trades",
+  "instructions": [
+    "You are an autonomous trading agent for Pollen, specifically configured for Base Sepolia testnet.",
+    "Your goal is to analyze market data from TradingView and execute optimal virtual trades on the Pollen app.",
+    "You operate exclusively on Base Sepolia network for testing and development purposes.",
+    "Follow the configured trading strategy and risk parameters set by your user.",
+    "Only execute trades when conditions meet the specified criteria in your configuration.",
+    "All trades are virtual/simulated on the Base Sepolia testnet for safe testing."
+  ],
+  "clients": [
+    "discord",
+    "telegram"
+  ],
+  "actions": [
+    {
+      "name": "analyze_market_base_sepolia",
+      "description": "Analyze current market conditions using TradingView data for Base Sepolia",
+      "signature": "analyze_market_base_sepolia()",
+      "implementation": "node src/actions/analyze_market_base_sepolia.js",
+      "handler": "analyzeMarketBaseSepoliaAction"
+    },
+    {
+      "name": "execute_trade_base_sepolia",
+      "description": "Execute a virtual trade on the Pollen platform Base Sepolia with risk management",
+      "signature": "execute_trade_base_sepolia(assets, allocations, risk_params)",
+      "implementation": "node src/actions/execute_trade_base_sepolia.js",
+      "handler": "executeTradeBaseSepoliaAction"
+    },
+    {
+      "name": "check_portfolio_base_sepolia",
+      "description": "Check current portfolio allocation and performance on Base Sepolia",
+      "signature": "check_portfolio_base_sepolia()",
+      "implementation": "node src/actions/check_portfolio_base_sepolia.js",
+      "handler": "checkPortfolioBaseSepoliaAction"
+    },
+    {
+      "name": "set_thesis_base_sepolia",
+      "description": "Update the trading thesis for your Pollen neuron on Base Sepolia",
+      "signature": "set_thesis_base_sepolia(thesis)",
+      "implementation": "node src/actions/set_thesis_base_sepolia.js"
+    },
+    {
+      "name": "validate_contracts_base_sepolia",
+      "description": "Validate Base Sepolia contract addresses and connectivity",
+      "signature": "validate_contracts_base_sepolia()",
+      "implementation": "node src/actions/validate_contracts_base_sepolia.js"
+    },
+    {
+      "name": "monitor_gas_prices",
+      "description": "Monitor Base Sepolia gas prices for optimal transaction timing",
+      "signature": "monitor_gas_prices()",
+      "implementation": "node src/actions/monitor_gas_prices.js"
+    },
+    {
+      "name": "risk_assessment_base_sepolia",
+      "description": "Assess risk levels for trading decisions on Base Sepolia",
+      "signature": "risk_assessment_base_sepolia(trade_params)",
+      "implementation": "node src/actions/risk_assessment_base_sepolia.js"
+    }
+  ],
+  "knowledge": [
+    {
+      "name": "pollen-base-sepolia-contracts",
+      "description": "Base Sepolia contract addresses and configurations",
+      "path": "../docs/base-sepolia-contracts.md"
+    },
+    {
+      "name": "base-sepolia-trading-guide",
+      "description": "Trading strategies specific to Base Sepolia testnet",
+      "path": "../docs/base-sepolia-trading.md"
+    },
+    {
+      "name": "base-network-security",
+      "description": "Security best practices for Base network interactions",
+      "path": "../docs/base-security.md"
+    }
+  ],
+  "configuration": {
+    "network": {
+      "type": "string",
+      "description": "Blockchain network (fixed to base-sepolia for this agent)",
+      "default": "base-sepolia",
+      "readonly": true
+    },
+    "chain_id": {
+      "type": "number",
+      "description": "Base Sepolia chain ID",
+      "default": 84532,
+      "readonly": true
+    },
+    "rpc_url": {
+      "type": "string",
+      "description": "Base Sepolia RPC endpoint",
+      "default": "https://sepolia.base.org",
+      "secret": false
+    },
+    "private_key": {
+      "type": "string",
+      "description": "Ethereum private key for executing transactions (Base Sepolia testnet only)",
+      "secret": true
+    },
+    "pollen_dao_address": {
+      "type": "string",
+      "description": "PollenDAO contract address on Base Sepolia",
+      "default": "0xEF789258233E6cFBB5E0bb093FC9537E69e81Bb7",
+      "readonly": true
+    },
+    "leagues_address": {
+      "type": "string",
+      "description": "Leagues contract address on Base Sepolia",
+      "default": "0x55F04Ee2775925b80125F412C05cF5214Fd1317a",
+      "readonly": true
+    },
+    "vepln_address": {
+      "type": "string",
+      "description": "vePln contract address on Base Sepolia",
+      "default": "0x3a28AB567b661B3edaF9Ef0bDE9489558EDB3995",
+      "readonly": true
+    },
+    "pln_token_address": {
+      "type": "string",
+      "description": "PLN token contract address on Base Sepolia",
+      "default": "0x9E1c51E1fAa1381D8a7Dbdd19402c5fCce9274C6",
+      "readonly": true
+    },
+    "risk_level": {
+      "type": "string",
+      "description": "Risk level for trading strategy (low, medium, high)",
+      "default": "low",
+      "enum": ["low", "medium", "high"]
+    },
+    "trading_interval": {
+      "type": "number",
+      "description": "Interval between trades in milliseconds",
+      "default": 7200000,
+      "min": 300000,
+      "max": 86400000
+    },
+    "auto_rebalance": {
+      "type": "boolean",
+      "description": "Automatically rebalance portfolio when threshold is reached",
+      "default": true
+    },
+    "rebalance_threshold": {
+      "type": "number",
+      "description": "Minimum percentage difference to trigger rebalancing",
+      "default": 3,
+      "min": 1,
+      "max": 10
+    },
+    "max_allocation": {
+      "type": "number",
+      "description": "Maximum percentage allocated to a single asset",
+      "default": 15,
+      "min": 5,
+      "max": 25
+    },
+    "gas_limit": {
+      "type": "number",
+      "description": "Gas limit for transactions",
+      "default": 500000,
+      "min": 100000,
+      "max": 2000000
+    },
+    "max_gas_price_gwei": {
+      "type": "number",
+      "description": "Maximum gas price in Gwei",
+      "default": 20,
+      "min": 1,
+      "max": 100
+    },
+    "simulation_mode": {
+      "type": "boolean",
+      "description": "Enable simulation mode for safe testing",
+      "default": true
+    },
+    "thesis": {
+      "type": "string",
+      "description": "Trading thesis for your Pollen neuron on Base Sepolia",
+      "default": "Testing and developing trading strategies on Base Sepolia testnet"
+    }
+  },
+  "security": {
+    "enable_transaction_simulation": true,
+    "require_confirmation_for_large_trades": true,
+    "max_daily_transaction_value": "1000",
+    "enable_whitelist_addresses": true,
+    "allowed_contract_interactions": [
+      "0xEF789258233E6cFBB5E0bb093FC9537E69e81Bb7",
+      "0x55F04Ee2775925b80125F412C05cF5214Fd1317a",
+      "0x3a28AB567b661B3edaF9Ef0bDE9489558EDB3995",
+      "0x9E1c51E1fAa1381D8a7Dbdd19402c5fCce9274C6"
+    ]
+  },
+  "memories": [
+    {
+      "id": "base-sepolia-trading-history",
+      "description": "History of trades executed on Base Sepolia",
+      "path": "./memories/base-sepolia-trading-history.json"
+    },
+    {
+      "id": "base-sepolia-performance-metrics",
+      "description": "Performance metrics for Base Sepolia trading",
+      "path": "./memories/base-sepolia-performance.json"
+    },
+    {
+      "id": "contract-validation-cache",
+      "description": "Cache of contract validation results",
+      "path": "./memories/contract-validation.json"
+    }
+  ],
+  "loaders": [
+    {
+      "name": "base-sepolia-config-loader",
+      "implementation": "node src/loaders/load_base_sepolia_config.js"
+    },
+    {
+      "name": "contract-validator",
+      "implementation": "node src/loaders/validate_base_sepolia_contracts.js"
+    }
+  ],
+  "schedule": [
+    {
+      "name": "contract-validation",
+      "description": "Regular contract validation for Base Sepolia",
+      "action": "validate_contracts_base_sepolia",
+      "cron": "0 */4 * * *"
+    },
+    {
+      "name": "market-analysis-base-sepolia",
+      "description": "Regular market analysis for Base Sepolia",
+      "action": "analyze_market_base_sepolia",
+      "cron": "0 */2 * * *"
+    },
+    {
+      "name": "portfolio-check-base-sepolia",
+      "description": "Regular portfolio check on Base Sepolia",
+      "action": "check_portfolio_base_sepolia",
+      "cron": "0 */6 * * *"
+    },
+    {
+      "name": "gas-price-monitoring",
+      "description": "Monitor gas prices for optimal transaction timing",
+      "action": "monitor_gas_prices",
+      "cron": "*/15 * * * *"
+    }
+  ],
+  "health_checks": [
+    {
+      "name": "base-sepolia-connectivity",
+      "description": "Check Base Sepolia network connectivity",
+      "interval": 300000
+    },
+    {
+      "name": "contract-accessibility",
+      "description": "Verify contract accessibility",
+      "interval": 600000
+    }
+  ]
+} 

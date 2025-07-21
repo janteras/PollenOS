@@ -1,0 +1,28 @@
+{
+  "name": "pollen-web-interface",
+  "version": "1.0.0",
+  "description": "PollenOS Web Configuration Interface",
+  "main": "server/config-server.js",
+  "scripts": {
+    "start": "node server/config-server.js",
+    "dev": "nodemon server/config-server.js",
+    "web-interface": "PORT=5002 node server/config-server.js",
+    "test": "jest --detectOpenHandles --forceExit",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "web3": "^1.10.0",
+    "ws": "^8.18.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "eslint": "^8.56.0",
+    "jest": "^30.0.4",
+    "nodemon": "^3.0.2",
+    "sqlite3": "^5.1.7"
+  }
+}

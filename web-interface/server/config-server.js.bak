@@ -1,0 +1,468 @@
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
+const cors = require('cors');
+const WebSocket = require('ws');
+const http = require('http');
+const config = require('../config/web-config');
+
+class PollenConfigServer {
+  constructor() {
+    this.app = express();
+    this.server = http.createServer(this.app);
+    this.wss = new WebSocket.Server({ server: this.server });
+    this.setupMiddleware();
+    this.setupRoutes();
+    this.setupWebSocket();
+  }
+
+  setupMiddleware() {
+    this.app.use(cors());
+    this.app.use(express.json());
+    this.app.use(express.static(path.join(__dirname, '../public')));
+  }
+
+  setupRoutes() {
+    // Close existing server if it exists
+    if (this.server.listening) {
+      this.server.close();
+    }
+    
+    // Start new server
+    this.server.listen(config.PORT, config.HOST, () => {
+      console.log(`🌐 PollenOS Configuration Interface running on ${config.INTERFACE_URL}`);
+      console.log(`📊 WebSocket server ready for real-time updates`);
+      console.log(`🔗 Access the interface at: ${config.INTERFACE_URL}`);
+      console.log(`🔗 WebSocket URL: ${config.WEBSOCKET_URL}`);
+    });
+
+    // Serve main interface
+    this.app.get('/', (req, res) => {
+      res.sendFile(path.join(__dirname, '../public/index.html'));
+    });
+
+    // Get all bot configurations
+    this.app.get('/api/bots', (req, res) => {
+      try {
+        const fs = require('fs');
+        const path = require('path');
+        const performanceDir = path.resolve(__dirname, '../../data/performance');
+
+        const bots = {};
+        const botFiles = ['bot1_performance.json', 'bot2_performance.json', 'bot3_performance.json', 'bot4_performance.json', 'bot5_performance.json'];
+
+        botFiles.forEach(file => {
+          const filePath = path.join(performanceDir, file);
+          if (fs.existsSync(filePath)) {
+            try {
+              const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+              const botId = file.replace('_performance.json', '');
+              bots[botId] = {
+                name: this.getBotName(botId),
+                strategy: data.strategy || 'unknown',
+                riskLevel: data.riskLevel || 'moderate',
+                status: 'active',
+                portfolioValue: data.portfolioHistory.length > 0 
+                  ? data.portfolioHistory[data.portfolioHistory.length - 1].value 
+                  : data.initialValue || 0,
+                pnl24h: data.portfolioHistory.length > 1
+                  ? data.portfolioHistory[data.portfolioHistory.length - 1].dailyChangePercent || 0
+                  : 0,
+                lastRebalance: data.portfolioHistory.length > 0 
+                  ? data.portfolioHistory[data.portfolioHistory.length - 1].timestamp 
+                  : Date.now(),
+                totalTrades: data.transactions ? data.transactions.length : 0
+                lastTrade: data.transactions && data.transactions.length > 0 
+                  ? new Date(data.transactions[data.transactions.length - 1].timestamp).toLocaleTimeString()
+                  : 'Never',
+                performance: data.overallStats ? data.overallStats.totalReturn : 0
+              };
+            } catch (error) {
+              console.error(`Error reading ${file}:`, error.message);
+            }
+          }
+        });
+
+        res.json(bots);
+      } catch (error) {
+        console.error('Error fetching bot data:', error);
+        res.json({});
+      }
+    });
+
+    // Get single bot configuration
+    this.app.get('/api/bots/:id', (req, res) => {
+      try {
+        const { BOT_CONFIGS } = require('../../multi-bot-config.js');
+        const bot = BOT_CONFIGS[req.params.id];
+        if (bot) {
+          res.json(bot);
+        } else {
+          res.status(404).json({ error: 'Bot not found' });
+        }
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    // Update bot configuration
+    this.app.put('/api/bots/:id', (req, res) => {
+      try {
+        const configPath = path.join(__dirname, '../../multi-bot-config.js');
+        const { BOT_CONFIGS } = require(configPath);
+
+        if (BOT_CONFIGS[req.params.id]) {
+          BOT_CONFIGS[req.params.id] = { ...BOT_CONFIGS[req.params.id], ...req.body };
+
+          // Write updated config back to file
+          const configContent = `const BOT_CONFIGS = ${JSON.stringify(BOT_CONFIGS, null, 2)};
+
+const BASE_SEPOLIA_CONFIG = {
+  chainId: 84532,
+  name: 'Base Sepolia',
+  rpcUrl: 'https://sepolia.base.org',
+  explorerUrl: 'https://sepolia.basescan.org',
+  contracts: {
+    plnToken: '0x9E1c51E1fAa1381D8a7Dbdd19402c5fCce9274C6',
+    pollenDAO: '0xEF789258233E6cFBB5E0bb093FC9537E69e81Bb7',
+    vePLN: '0x3a28AB567b661B3edaF9Ef0bDE9489558EDB3995',
+    leagues: '0x55F04Ee2775925b80125F412C05cF5214Fd1317a'
+  },
+  gasPrice: '0.1',
+  gasLimit: 500000,
+  confirmations: 1
+};
+
+module.exports = {
+  BOT_CONFIGS,
+  BASE_SEPOLIA_CONFIG
+};`;
+
+          fs.writeFileSync(configPath, configContent);
+          this.broadcastUpdate('bot_updated', { id: req.params.id, config: BOT_CONFIGS[req.params.id] });
+          res.json(BOT_CONFIGS[req.params.id]);
+        } else {
+          res.status(404).json({ error: 'Bot not found' });
+        }
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    // Get system status
+    this.app.get('/api/status', (req, res) => {
+      try {
+        const fs = require('fs');
+        const path = require('path');
+        const performanceDir = path.resolve(__dirname, '../../data/performance');
+
+        let totalValue = 0;
+        let totalChange = 0;
+        let activeBots = 0;
+        let totalTransactions = 0;
+
+        const botFiles = ['bot1_performance.json', 'bot2_performance.json', 'bot3_performance.json', 'bot4_performance.json', 'bot5_performance.json'];
+
+        botFiles.forEach(file => {
+          const filePath = path.join(performanceDir, file);
+          if (fs.existsSync(filePath)) {
+            try {
+              const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+              if (data.portfolioHistory && data.portfolioHistory.length > 0) {
+                const latest = data.portfolioHistory[data.portfolioHistory.length - 1];
+                totalValue += latest.value || 0;
+                totalChange += latest.dailyChangePercent || 0;
+                activeBots++;
+              }
+
+              if (data.transactions) {
+                totalTransactions += data.transactions.length;
+              }
+            } catch (error) {
+              console.error(`Error reading ${file}:`, error.message);
+            }
+          }
+        });
+
+        res.json({
+          status: 'running',
+          timestamp: new Date().toISOString(),
+          bots: {},
+          totalValue: totalValue,
+          performance24h: activeBots > 0 ? totalChange / activeBots : 0,
+          recentTransactions: totalTransactions
+        });
+      } catch (error) {
+        console.error('Error fetching status:', error);
+        res.json({
+          status: 'error',
+          timestamp: new Date().toISOString(),
+          bots: {},
+          totalValue: 0,
+          performance24h: 0,
+          recentTransactions: 0
+        });
+      }
+    });
+
+    // Start/stop trading
+    this.app.post('/api/trading/:action', (req, res) => {
+      const action = req.params.action;
+      if (action === 'start' || action === 'stop') {
+        this.broadcastUpdate('trading_' + action, { timestamp: new Date().toISOString() });
+        res.json({ success: true, action: action });
+      } else {
+        res.status(400).json({ error: 'Invalid action' });
+      }
+    });
+
+    // Export configuration
+    this.app.get('/api/export', (req, res) => {
+      const config = {
+        timestamp: new Date().toISOString(),
+        network: { name: 'Base Sepolia' },
+        bots: {},
+        strategies: []
+      };
+
+      res.json(config);
+    });
+  }
+
+  setupWebSocket() {
+    // WebSocket connection handler
+    this.wss.on('connection', (ws) => {
+      console.log('Client connected to WebSocket');
+
+      // Send initial real-time data
+      this.sendRealTimeUpdate(ws);
+
+      // Set up periodic updates every 30 seconds
+      const updateInterval = setInterval(() => {
+        this.sendRealTimeUpdate(ws);
+      }, 30000);
+
+      ws.on('close', () => {
+        console.log('Client disconnected from WebSocket');
+        clearInterval(updateInterval);
+      });
+    });
+  }
+
+  broadcastUpdate(type, data) {
+    const message = JSON.stringify({ type, data, timestamp: new Date().toISOString() });
+    this.wss.clients.forEach((client) => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(message);
+      }
+    });
+  }
+
+  getBotStatus() {
+    try {
+      const { BOT_CONFIGS } = require('../../multi-bot-config.js');
+      const status = {};
+
+      Object.keys(BOT_CONFIGS).forEach(id => {
+        status[id] = {
+          name: BOT_CONFIGS[id].name,
+          strategy: BOT_CONFIGS[id].strategy,
+          status: 'active',
+          lastTrade: new Date().toISOString()
+        };
+      });
+
+      return status;
+    } catch (error) {
+      return {};
+    }
+  }
+
+  async sendRealTimeUpdate(ws) {
+    try {
+      // Read real bot data from performance files
+      const fs = require('fs');
+      const path = require('path');
+      const performanceDir = path.resolve(__dirname, '../../data/performance');
+
+      const realBotData = {};
+      const botFiles = ['bot1_performance.json', 'bot2_performance.json', 'bot3_performance.json', 'bot4_performance.json', 'bot5_performance.json'];
+
+      for (const file of botFiles) {
+        const filePath = path.join(performanceDir, file);
+        if (fs.existsSync(filePath)) {
+          try {
+            const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            const botId = file.replace('_performance.json', '');
+
+            // Calculate current portfolio value
+            const currentValue = data.portfolioHistory.length > 0 
+              ? data.portfolioHistory[data.portfolioHistory.length - 1].value 
+              : data.initialValue || 0;
+
+            // Calculate 24h change
+            const change24h = data.portfolioHistory.length > 1
+              ? data.portfolioHistory[data.portfolioHistory.length - 1].dailyChangePercent || 0
+              : 0;
+
+            realBotData[botId] = {
+              name: this.getBotName(botId),
+              strategy: data.strategy || 'unknown',
+              riskLevel: data.riskLevel || 'moderate',
+              status: 'active',
+              portfolioValue: currentValue,
+              pnl24h: change24h,
+              lastRebalance: data.portfolioHistory.length > 0 
+                ? data.portfolioHistory[data.portfolioHistory.length - 1].timestamp 
+                : Date.now(),
+              totalTrades: data.transactions ? data.transactions.length : 0
+            };
+          } catch (error) {
+            console.error(`Error reading ${file}:`, error.message);
+          }
+        }
+      }
+
+      // Send bot status update
+      ws.send(JSON.stringify({
+        type: 'bot_status',
+        payload: Object.values(realBotData)
+      }));
+
+      // Calculate and send performance summary
+      const totalValue = Object.values(realBotData).reduce((sum, bot) => sum + (bot.portfolioValue || 0), 0);
+      const avgChange24h = Object.values(realBotData).reduce((sum, bot) => sum + (bot.pnl24h || 0), 0) / Object.keys(realBotData).length;
+      const totalTrades = Object.values(realBotData).reduce((sum, bot) => sum + (bot.totalTrades || 0), 0);
+
+      ws.send(JSON.stringify({
+        type: 'performance',
+        payload: {
+          totalValue: totalValue,
+          activeBots: Object.keys(realBotData).length,
+          performance24h: avgChange24h,
+          transactionsToday: totalTrades
+        }
+      }));
+    } catch (error) {
+      console.error('Error in sendRealTimeUpdate:', error);
+      ws.send(JSON.stringify({
+        type: 'error',
+        payload: {
+          message: 'Failed to update real-time data',
+          error: error.message
+    const realBotData = {};
+    const botFiles = ['bot1_performance.json', 'bot2_performance.json', 'bot3_performance.json', 'bot4_performance.json', 'bot5_performance.json'];
+
+    for (const file of botFiles) {
+      const filePath = path.join(performanceDir, file);
+      if (fs.existsSync(filePath)) {
+        try {
+          const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          const botId = file.replace('_performance.json', '');
+
+          // Calculate current portfolio value
+          const currentValue = data.portfolioHistory.length > 0 
+            ? data.portfolioHistory[data.portfolioHistory.length - 1].value 
+            : data.initialValue || 0;
+
+          // Calculate 24h change
+          const change24h = data.portfolioHistory.length > 1
+            ? data.portfolioHistory[data.portfolioHistory.length - 1].dailyChangePercent || 0
+            : 0;
+
+          realBotData[botId] = {
+            name: this.getBotName(botId),
+            strategy: data.strategy || 'unknown',
+            riskLevel: data.riskLevel || 'moderate',
+            status: 'active',
+            portfolioValue: currentValue,
+            pnl24h: change24h,
+            lastRebalance: data.portfolioHistory.length > 0 
+              ? data.portfolioHistory[data.portfolioHistory.length - 1].timestamp 
+              : Date.now(),
+            totalTrades: data.transactions ? data.transactions.length : 0
+          };
+        } catch (error) {
+          console.error(`Error reading ${file}:`, error.message);
+        }
+      }
+    }
+
+    // Send bot status update
+    ws.send(JSON.stringify({
+      type: 'bot_status',
+      payload: Object.values(realBotData)
+    }));
+
+    // Calculate and send performance summary
+    const totalValue = Object.values(realBotData).reduce((sum, bot) => sum + (bot.portfolioValue || 0), 0);
+    const avgChange24h = Object.values(realBotData).reduce((sum, bot) => sum + (bot.pnl24h || 0), 0) / Object.keys(realBotData).length;
+    const totalTrades = Object.values(realBotData).reduce((sum, bot) => sum + (bot.totalTrades || 0), 0);
+
+    ws.send(JSON.stringify({
+      type: 'performance',
+      payload: {
+        totalValue: totalValue,
+        activeBots: Object.keys(realBotData).length,
+        performance24h: avgChange24h,
+        transactionsToday: totalTrades
+      }
+    }));
+
+  }
+
+  getBotName(botId) {
+    const botNames = {
+      'bot1': 'Conservative Bot',
+      'bot2': 'Momentum Bot', 
+      'bot3': 'Technical Bot',
+      'bot4': 'Mean Reversion Bot',
+      'bot5': 'Breakout Bot'
+    };
+    return botNames[botId] || `Bot ${botId}`;
+  }
+
+  setupWebSocket() {
+    this.wss.on('connection', (ws) => {
+      console.log('WebSocket client connected');
+
+      // Send initial bot status
+      this.sendRealTimeUpdate(ws);
+
+      // Set up interval for real-time updates
+      const intervalId = setInterval(() => {
+        this.sendRealTimeUpdate(ws);
+      }, 5000);
+
+      // Handle client disconnection
+      ws.on('close', () => {
+        console.log('WebSocket client disconnected');
+        clearInterval(intervalId);
+      });
+
+      // Handle errors
+      ws.on('error', (error) => {
+        console.error('WebSocket error:', error);
+    });
+
+    // Handle errors
+    ws.on('error', (error) => {
+      console.error('WebSocket error:', error);
+      clearInterval(intervalId);
+    });
+  });
+}
+
+// Start server
+if (require.main === module) {
+  const server = new PollenConfigServer();
+  server.server.listen(config.PORT, config.HOST, () => {
+    console.log(`🌐 PollenOS Configuration Interface running on ${config.INTERFACE_URL}`);
+    console.log(`📊 WebSocket server ready for real-time updates`);
+    console.log(`🔗 Access the interface at: ${config.INTERFACE_URL}`);
+    console.log(`🔗 WebSocket URL: ${config.WEBSOCKET_URL}`);
+  });
+}
+
+module.exports = PollenConfigServer;
